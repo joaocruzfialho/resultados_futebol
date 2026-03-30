@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Previsor de Resultados de Futebol 2025/26</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Portugal • Espanha • Inglaterra • Época 2025/26</p>
+          <h1>Previsor de Resultados de Futebol</h1>
+          <p class="hero-text">
+            Escolha um jogo e veja a probabilidade do resultado acontecer com um modelo
+            <strong>Poisson melhorado</strong>, com correção <strong>Dixon-Coles</strong>,
+            <strong>xG real do Understat</strong> quando disponível, recência reforçada e
+            comparação de <strong>odds justas</strong> com o mercado.
+          </p>
+        </div>
+        <div class="hero-badge">
+          <span id="dataStatus">A carregar dados…</span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel controls">
+          <h2>⚽ Escolher jogo</h2>
+
+          <label for="leagueSelect">Campeonato</label>
+          <select id="leagueSelect"></select>
+
+          <div class="teams-grid">
+            <div>
+              <label for="homeTeamSelect">Equipa da casa</label>
+              <select id="homeTeamSelect"></select>
+            </div>
+            <div>
+              <label for="awayTeamSelect">Equipa visitante</label>
+              <select id="awayTeamSelect"></select>
+            </div>
+          </div>
+
+          <div class="slider-wrap">
+            <div class="slider-label-row">
+              <label for="formWeight">Peso da recência</label>
+              <strong id="formWeightValue">20%</strong>
+            </div>
+            <input id="formWeight" type="range" min="0" max="45" value="20" />
+          </div>
+
+          <div class="teams-grid medical-grid">
+            <div>
+              <label for="homeInjuries">Lesões casa</label>
+              <input id="homeInjuries" type="number" min="0" max="10" value="0" />
+            </div>
+            <div>
+              <label for="awayInjuries">Lesões fora</label>
+              <input id="awayInjuries" type="number" min="0" max="10" value="0" />
+            </div>
+            <div>
+              <label for="homeSuspensions">Suspensões casa</label>
+              <input id="homeSuspensions" type="number" min="0" max="5" value="0" />
+            </div>
+            <div>
+              <label for="awaySuspensions">Suspensões fora</label>
+              <input id="awaySuspensions" type="number" min="0" max="5" value="0" />
+            </div>
+          </div>
+
+          <div id="restInfo" class="context-box small-note">O contexto de descanso do jogo aparecerá aqui.</div>
+
+          <div class="actions">
+            <button id="predictButton" class="primary" type="button">Calcular probabilidades</button>
+            <button id="swapButton" class="secondary" type="button">Trocar equipas</button>
+          </div>
+
+          <p class="small-note">
+            Dados locais da época <strong>2025/26</strong>. Inglaterra e Espanha usam <strong>xG real</strong> do Understat; Portugal usa fallback por <strong>xG proxy</strong>. Para atualizar: <code>npm run update-data</code>.
+          </p>
+        </section>
+
+        <section class="panel summary">
+          <div class="match-header">
+            <div>
+              <h2 id="matchTitle">Selecione um jogo</h2>
+              <p id="matchSubtitle">As probabilidades serão calculadas com base nos dados atuais da liga.</p>
+            </div>
+            <div class="prediction-highlight" id="bestPick">—</div>
+          </div>
+
+          <div class="xg-grid">
+            <article class="metric-card accent-blue">
+              <span>Golos esperados casa</span>
+              <strong id="homeExpected">—</strong>
+            </article>
+            <article class="metric-card accent-purple">
+              <span>Golos esperados fora</span>
+              <strong id="awayExpected">—</strong>
+            </article>
+          </div>
+
+          <div class="probability-grid">
+            <article class="metric-card"><span>Vitória casa</span><strong id="homeWin">—</strong></article>
+            <article class="metric-card"><span>Empate</span><strong id="drawProb">—</strong></article>
+            <article class="metric-card"><span>Vitória fora</span><strong id="awayWin">—</strong></article>
+            <article class="metric-card"><span>Mais de 2.5 golos</span><strong id="over25">—</strong></article>
+            <article class="metric-card"><span>Ambas marcam</span><strong id="btts">—</strong></article>
+          </div>
+
+          <h3 class="subsection-title">⏱️ Probabilidades ao intervalo</h3>
+          <div class="probability-grid half-time-grid">
+            <article class="metric-card"><span>HT vitória casa</span><strong id="htHomeWin">—</strong></article>
+            <article class="metric-card"><span>HT empate</span><strong id="htDrawProb">—</strong></article>
+            <article class="metric-card"><span>HT vitória fora</span><strong id="htAwayWin">—</strong></article>
+            <article class="metric-card"><span>HT 0-0</span><strong id="htNoGoal">—</strong></article>
+          </div>
+          <div id="htOddsTable" class="table-shell"></div>
+        </section>
+
+        <section class="panel breakdown">
+          <h2>📊 Força de Ataque e Defesa</h2>
+          <div id="strengthTable" class="table-shell"></div>
+        </section>
+
+        <section class="panel breakdown">
+          <h2>🎯 Resultados exatos mais prováveis</h2>
+          <div id="topScores" class="score-list"></div>
+        </section>
+
+        <section class="panel breakdown">
+          <h2>💸 Odds justas e comparação com mercado</h2>
+          <div class="market-grid">
+            <div>
+              <p class="small-note">
+                Introduza as odds da casa de apostas para comparar com as <strong>odds justas</strong> do modelo. Se deixar vazio, o sistema usa a <strong>melhor odd importada</strong> disponível. Edge positivo significa potencial valor.
+              </p>
+
+              <div class="odds-input-grid">
+                <div>
+                  <label for="marketHomeOdd">Odd casa</label>
+                  <input id="marketHomeOdd" type="number" min="1.01" step="0.01" placeholder="2.10" />
+                </div>
+                <div>
+                  <label for="marketDrawOdd">Odd empate</label>
+                  <input id="marketDrawOdd" type="number" min="1.01" step="0.01" placeholder="3.40" />
+                </div>
+                <div>
+                  <label for="marketAwayOdd">Odd fora</label>
+                  <input id="marketAwayOdd" type="number" min="1.01" step="0.01" placeholder="3.20" />
+                </div>
+                <div>
+                  <label for="marketOver25Odd">Odd over 2.5</label>
+                  <input id="marketOver25Odd" type="number" min="1.01" step="0.01" placeholder="1.90" />
+                </div>
+                <div>
+                  <label for="marketBttsOdd">Odd ambas marcam</label>
+                  <input id="marketBttsOdd" type="number" min="1.01" step="0.01" placeholder="1.80" />
+                </div>
+              </div>
+
+              <div class="actions">
+                <button id="clearOddsButton" class="secondary" type="button">Limpar odds</button>
+              </div>
+            </div>
+
+            <div id="marketTable" class="table-shell"></div>
+          </div>
+        </section>
+
+        <section class="panel breakdown">
+          <h2>🏦 Odds por Casa de Apostas</h2>
+          <p id="autoOddsNote" class="small-note">A procurar odds automáticas para o jogo selecionado…</p>
+          <div id="bookmakerTable" class="table-shell"></div>
+        </section>
+
+        <section class="panel info-panel">
+          <h2>ℹ️ Como funciona</h2>
+          <ol>
+            <li>O sistema usa os resultados já jogados em 2025/26 nas três ligas.</li>
+            <li>Obtém <strong>xG real</strong> do Understat para Inglaterra e Espanha, com fallback proxy para Portugal.</li>
+            <li>Calcula força ofensiva/defensiva em casa e fora, dá mais peso aos jogos recentes e ajusta por <strong>descanso</strong>.</li>
+            <li>Permite ajustar o impacto de <strong>lesões</strong> e <strong>suspensões</strong> antes de prever.</li>
+            <li>Aplica a correção <strong>Dixon-Coles</strong> para melhorar resultados de poucos golos, inclusive ao <strong>intervalo</strong>.</li>
+            <li>Transforma isso em probabilidades de <strong>1X2</strong>, <strong>HT 1X2</strong>, <strong>over 2.5</strong>, <strong>ambas marcam</strong>, resultados exatos e <strong>odds justas</strong>.</li>
+          </ol>
+          <p class="small-note">
+            Modelo atual: <code>Dixon-Coles</code> + <code>xG real/proxy</code> + <code>recência reforçada</code> + <code>descanso/ausências</code> + <code>HT odds</code> + <code>fair odds</code>.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="data/snapshot.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

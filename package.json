@@ -1,0 +1,10 @@
+{
+  "name": "prever-resultados-futebol",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site local para prever resultados de futebol com Poisson nas ligas de Portugal, Espanha e Inglaterra (2025/26).",
+  "scripts": {
+    "start": "node server.js",
+    "update-data": "node --env-file-if-exists=.env scripts/update-data.mjs"
+  }
+}
