@@ -1312,7 +1312,7 @@
             <td><span class="badge ${badgeClass(t.attack)}">${formatDecimal(t.attack)}</span></td>
             <td><span class="badge ${badgeClass(t.defense, true)}">${formatDecimal(t.defense)}</span></td>
             <td class="${supClass}"><strong>${t.supremacy >= 0 ? "+" : ""}${t.supremacy.toFixed(2)}</strong></td>
-            <td>${t.form}</td>
+            <td>${t.form.split("").map(c => c === "W" ? "V" : c === "D" ? "E" : c === "L" ? "D" : c).join("")}</td>
           </tr>`;
         }).join("")}
         </tbody>
