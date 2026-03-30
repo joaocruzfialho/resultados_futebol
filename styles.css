@@ -420,34 +420,228 @@ ol li {
   }
 
   .probability-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .half-time-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .market-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
   .app-shell {
-    padding: 14px;
+    padding: 10px;
   }
 
   .hero {
-    padding: 20px;
+    padding: 16px;
     flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .hero-badge {
+    min-width: unset;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    border-radius: 10px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .layout {
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .panel {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  h2 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
   }
 
   .teams-grid,
   .xg-grid,
-  .probability-grid,
-  .half-time-grid,
   .market-grid,
   .odds-input-grid {
     grid-template-columns: 1fr;
   }
 
+  .probability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .probability-grid .metric-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .half-time-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metric-card {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .metric-card span {
+    font-size: 0.78rem;
+  }
+
+  .metric-card strong {
+    font-size: 1.15rem;
+    margin-top: 4px;
+  }
+
   .match-header {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .prediction-highlight {
+    min-width: unset;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  select,
+  input[type="number"] {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  button {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    flex: 1;
+  }
+
+  .actions {
+    margin-top: 14px;
+  }
+
+  .slider-wrap {
+    margin-top: 4px;
+  }
+
+  .medical-grid {
+    margin-top: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .context-box {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 0.82rem;
+    border-radius: 10px;
+  }
+
+  .score-row {
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .score-row strong {
+    font-size: 1rem;
+  }
+
+  .subsection-title {
+    margin: 14px 0 8px;
+    font-size: 0.92rem;
+  }
+
+  .small-note {
+    font-size: 0.8rem;
+  }
+
+  .table-shell {
+    margin: 0 -14px;
+    padding: 0 14px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 8px 6px;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+    padding: 3px 6px;
+  }
+
+  .bookmaker-name small {
+    font-size: 0.7rem;
+  }
+
+  ol {
+    padding-left: 16px;
+    font-size: 0.85rem;
+  }
+
+  .odds-input-grid {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-shell {
+    padding: 6px;
+  }
+
+  .hero {
+    padding: 12px;
+  }
+
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+
+  .panel {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .probability-grid,
+  .half-time-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .medical-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  table {
+    font-size: 0.72rem;
+  }
+
+  th, td {
+    padding: 6px 4px;
   }
 }
