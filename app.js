@@ -1185,7 +1185,7 @@
         form: team.form || "—",
         formScore: team.formScore ?? 0.5
       };
-    }).sort((a, b) => b.supremacy - a.supremacy);
+    }).sort((a, b) => b.points - a.points || b.gd - a.gd || b.attack - a.attack);
   }
 
   // ========= RENDER: EXTENDED MARKETS =========
