@@ -1008,6 +1008,344 @@
     `;
   }
 
+  // ========= EXTENDED MARKETS =========
+  function calculateExtendedMarkets(expectedHome, expectedAway, rho) {
+    const maxGoals = 7;
+    let total = 0;
+    const b = { over05: 0, over15: 0, over25: 0, over35: 0, over45: 0, homeOver05: 0, homeOver15: 0, homeOver25: 0, awayOver05: 0, awayOver15: 0, awayOver25: 0 };
+
+    for (let h = 0; h <= maxGoals; h++) {
+      const hp = poisson(h, expectedHome);
+      for (let a = 0; a <= maxGoals; a++) {
+        const tau = dixonColesTau(h, a, expectedHome, expectedAway, rho);
+        const p = hp * poisson(a, expectedAway) * tau;
+        total += p;
+        const tg = h + a;
+        if (tg >= 1) b.over05 += p;
+        if (tg >= 2) b.over15 += p;
+        if (tg >= 3) b.over25 += p;
+        if (tg >= 4) b.over35 += p;
+        if (tg >= 5) b.over45 += p;
+        if (h >= 1) b.homeOver05 += p;
+        if (h >= 2) b.homeOver15 += p;
+        if (h >= 3) b.homeOver25 += p;
+        if (a >= 1) b.awayOver05 += p;
+        if (a >= 2) b.awayOver15 += p;
+        if (a >= 3) b.awayOver25 += p;
+      }
+    }
+
+    const n = total > 0 ? 1 / total : 1;
+    Object.keys(b).forEach(k => { b[k] *= n; });
+    b.under05 = 1 - b.over05;
+    b.under15 = 1 - b.over15;
+    b.under25 = 1 - b.over25;
+    b.under35 = 1 - b.over35;
+    b.under45 = 1 - b.over45;
+    return b;
+  }
+
+  // ========= HANDICAPS =========
+  function calculateHandicaps(expectedHome, expectedAway, rho) {
+    const maxGoals = 7;
+    let total = 0;
+    const results = {};
+    const lines = [
+      { label: "Casa -1", shift: -1 },
+      { label: "Casa +1", shift: 1 },
+      { label: "Casa -2", shift: -2 },
+      { label: "Casa +2", shift: 2 }
+    ];
+
+    lines.forEach(l => { results[l.label] = { home: 0, draw: 0, away: 0 }; });
+
+    for (let h = 0; h <= maxGoals; h++) {
+      const hp = poisson(h, expectedHome);
+      for (let a = 0; a <= maxGoals; a++) {
+        const tau = dixonColesTau(h, a, expectedHome, expectedAway, rho);
+        const p = hp * poisson(a, expectedAway) * tau;
+        total += p;
+        lines.forEach(l => {
+          const adj = h + l.shift;
+          if (adj > a) results[l.label].home += p;
+          else if (adj === a) results[l.label].draw += p;
+          else results[l.label].away += p;
+        });
+      }
+    }
+
+    const n = total > 0 ? 1 / total : 1;
+    Object.keys(results).forEach(k => {
+      results[k].home *= n;
+      results[k].draw *= n;
+      results[k].away *= n;
+    });
+    return results;
+  }
+
+  // ========= HT/FT COMBINED =========
+  function calculateHtFtCombined(expectedHomeHT, expectedAwayHT, expectedHomeFT, expectedAwayFT) {
+    const maxHT = 4;
+    const max2H = 4;
+    const combos = { "1/1": 0, "1/X": 0, "1/2": 0, "X/1": 0, "X/X": 0, "X/2": 0, "2/1": 0, "2/X": 0, "2/2": 0 };
+    const home2H = Math.max(0.05, expectedHomeFT - expectedHomeHT);
+    const away2H = Math.max(0.05, expectedAwayFT - expectedAwayHT);
+    let total = 0;
+
+    for (let h1 = 0; h1 <= maxHT; h1++) {
+      for (let a1 = 0; a1 <= maxHT; a1++) {
+        const pHT = poisson(h1, expectedHomeHT) * poisson(a1, expectedAwayHT);
+        const htR = h1 > a1 ? "1" : h1 === a1 ? "X" : "2";
+        for (let h2 = 0; h2 <= max2H; h2++) {
+          for (let a2 = 0; a2 <= max2H; a2++) {
+            const p2H = poisson(h2, home2H) * poisson(a2, away2H);
+            const ftR = (h1 + h2) > (a1 + a2) ? "1" : (h1 + h2) === (a1 + a2) ? "X" : "2";
+            const prob = pHT * p2H;
+            combos[`${htR}/${ftR}`] += prob;
+            total += prob;
+          }
+        }
+      }
+    }
+
+    const n = total > 0 ? 1 / total : 1;
+    Object.keys(combos).forEach(k => { combos[k] *= n; });
+    return combos;
+  }
+
+  // ========= GOAL TIMING =========
+  function estimateGoalTiming(expectedHome, expectedAway) {
+    const weights = [0.14, 0.15, 0.17, 0.16, 0.18, 0.20];
+    const labels = ["0-15", "16-30", "31-45", "46-60", "61-75", "76-90"];
+
+    return labels.map((label, i) => {
+      const hLam = expectedHome * weights[i];
+      const aLam = expectedAway * weights[i];
+      return {
+        interval: label,
+        homeGoalProb: 1 - Math.exp(-hLam),
+        awayGoalProb: 1 - Math.exp(-aLam),
+        anyGoalProb: 1 - Math.exp(-(hLam + aLam))
+      };
+    });
+  }
+
+  // ========= KELLY CRITERION =========
+  function kellyStake(probability, odd, fraction) {
+    if (!odd || odd <= 1 || probability <= 0) return 0;
+    const kelly = (probability * odd - 1) / (odd - 1);
+    return kelly > 0 ? kelly * (fraction || 0.25) : 0;
+  }
+
+  // ========= TIPS =========
+  function generateTips(probabilities, extendedMarkets, bestImported) {
+    const markets = [
+      { label: "Vitória Casa (1)", prob: probabilities.homeWin, odd: bestImported.home },
+      { label: "Empate (X)", prob: probabilities.draw, odd: bestImported.draw },
+      { label: "Vitória Fora (2)", prob: probabilities.awayWin, odd: bestImported.away },
+      { label: "Over 2.5", prob: probabilities.over25, odd: bestImported.over25 },
+      { label: "DC 1X", prob: probabilities.homeWin + probabilities.draw, odd: null },
+      { label: "DC X2", prob: probabilities.draw + probabilities.awayWin, odd: null },
+      { label: "DC 12", prob: probabilities.homeWin + probabilities.awayWin, odd: null }
+    ];
+
+    return markets
+      .filter(m => m.odd && m.odd > 1)
+      .map(m => ({
+        ...m,
+        fairOdd: toFairOdd(m.prob),
+        edge: getValueEdge(m.prob, m.odd),
+        kelly: kellyStake(m.prob, m.odd, 0.25)
+      }))
+      .filter(m => m.edge !== null && m.edge > 0)
+      .sort((a, b) => b.edge - a.edge);
+  }
+
+  // ========= POWER RANKING =========
+  function buildPowerRanking(league) {
+    const homeAvg = league.homeGoalsAvg || 1.4;
+    const awayAvg = league.awayGoalsAvg || 1.1;
+
+    return league.teams.map(team => {
+      const ha = team.homePlayed > 0 ? (team.homeGoalsFor / team.homePlayed) / homeAvg : 1;
+      const hd = team.homePlayed > 0 ? (team.homeGoalsAgainst / team.homePlayed) / awayAvg : 1;
+      const aa = team.awayPlayed > 0 ? (team.awayGoalsFor / team.awayPlayed) / awayAvg : 1;
+      const ad = team.awayPlayed > 0 ? (team.awayGoalsAgainst / team.awayPlayed) / homeAvg : 1;
+      const attack = (ha + aa) / 2;
+      const defense = (hd + ad) / 2;
+      return {
+        name: team.name,
+        played: team.played,
+        points: team.points,
+        ppg: team.played > 0 ? (team.points / team.played) : 0,
+        gd: team.goalsFor - team.goalsAgainst,
+        attack,
+        defense,
+        supremacy: attack - defense,
+        form: team.form || "—",
+        formScore: team.formScore ?? 0.5
+      };
+    }).sort((a, b) => b.supremacy - a.supremacy);
+  }
+
+  // ========= RENDER: EXTENDED MARKETS =========
+  function renderExtendedMarkets(extended, probabilities) {
+    const el = document.getElementById("extendedMarketsTable");
+    if (!el) return;
+
+    const dc1x = probabilities.homeWin + probabilities.draw;
+    const dcx2 = probabilities.draw + probabilities.awayWin;
+    const dc12 = probabilities.homeWin + probabilities.awayWin;
+
+    const rows = [
+      { label: "DC 1X", prob: dc1x },
+      { label: "DC X2", prob: dcx2 },
+      { label: "DC 12", prob: dc12 },
+      { label: "Over 0.5", prob: extended.over05 },
+      { label: "Over 1.5", prob: extended.over15 },
+      { label: "Over 2.5", prob: extended.over25 },
+      { label: "Over 3.5", prob: extended.over35 },
+      { label: "Over 4.5", prob: extended.over45 },
+      { label: "Under 0.5", prob: extended.under05 },
+      { label: "Under 1.5", prob: extended.under15 },
+      { label: "Under 2.5", prob: extended.under25 },
+      { label: "Under 3.5", prob: extended.under35 },
+      { label: "Under 4.5", prob: extended.under45 },
+      { label: "Casa Over 0.5", prob: extended.homeOver05 },
+      { label: "Casa Over 1.5", prob: extended.homeOver15 },
+      { label: "Casa Over 2.5", prob: extended.homeOver25 },
+      { label: "Fora Over 0.5", prob: extended.awayOver05 },
+      { label: "Fora Over 1.5", prob: extended.awayOver15 },
+      { label: "Fora Over 2.5", prob: extended.awayOver25 }
+    ];
+
+    el.innerHTML = `
+      <table>
+        <thead><tr><th>Mercado</th><th>Prob.</th><th>Odd justa</th></tr></thead>
+        <tbody>${rows.map(r => `
+          <tr>
+            <td><strong>${r.label}</strong></td>
+            <td>${formatPercent(r.prob)}</td>
+            <td>${formatOdd(toFairOdd(r.prob))}</td>
+          </tr>`).join("")}
+        </tbody>
+      </table>`;
+  }
+
+  // ========= RENDER: HANDICAPS =========
+  function renderHandicaps(handicaps) {
+    const el = document.getElementById("handicapsTable");
+    if (!el) return;
+
+    const rows = Object.entries(handicaps);
+    el.innerHTML = `
+      <table>
+        <thead><tr><th>Handicap</th><th>1</th><th>X</th><th>2</th></tr></thead>
+        <tbody>${rows.map(([label, r]) => `
+          <tr>
+            <td><strong>${label}</strong></td>
+            <td>${formatPercent(r.home)}</td>
+            <td>${formatPercent(r.draw)}</td>
+            <td>${formatPercent(r.away)}</td>
+          </tr>`).join("")}
+        </tbody>
+      </table>`;
+  }
+
+  // ========= RENDER: HT/FT =========
+  function renderHtFtTable(htft) {
+    const el = document.getElementById("htftTable");
+    if (!el) return;
+
+    const keys = ["1/1", "1/X", "1/2", "X/1", "X/X", "X/2", "2/1", "2/X", "2/2"];
+    el.innerHTML = `
+      <div class="htft-grid">${keys.map(k => {
+        const prob = htft[k] || 0;
+        const intensity = Math.min(prob * 8, 1);
+        return `
+          <div class="htft-cell" style="background: rgba(97,169,255,${(intensity * 0.35).toFixed(2)})">
+            <span class="htft-label">${k}</span>
+            <strong>${formatPercent(prob)}</strong>
+            <small>${formatOdd(toFairOdd(prob))}</small>
+          </div>`;
+      }).join("")}
+      </div>`;
+  }
+
+  // ========= RENDER: GOAL TIMING =========
+  function renderGoalTiming(timing) {
+    const el = document.getElementById("goalTimingTable");
+    if (!el) return;
+
+    el.innerHTML = `
+      <table>
+        <thead><tr><th>Intervalo</th><th>Golo casa</th><th>Golo fora</th><th>Qualquer golo</th></tr></thead>
+        <tbody>${timing.map(t => `
+          <tr>
+            <td><strong>${t.interval}'</strong></td>
+            <td>${formatPercent(t.homeGoalProb)}</td>
+            <td>${formatPercent(t.awayGoalProb)}</td>
+            <td><strong>${formatPercent(t.anyGoalProb)}</strong></td>
+          </tr>`).join("")}
+        </tbody>
+      </table>`;
+  }
+
+  // ========= RENDER: POWER RANKING =========
+  function renderPowerRanking(league) {
+    const el = document.getElementById("powerRankingTable");
+    if (!el) return;
+
+    const ranking = buildPowerRanking(league);
+    el.innerHTML = `
+      <table>
+        <thead><tr><th>#</th><th>Equipa</th><th>J</th><th>Pts</th><th>PPG</th><th>Ataque</th><th>Defesa</th><th>Supremacia</th><th>Forma</th></tr></thead>
+        <tbody>${ranking.map((t, i) => {
+          const supClass = t.supremacy > 0.15 ? "edge-positive" : t.supremacy < -0.15 ? "edge-negative" : "edge-neutral";
+          return `
+          <tr>
+            <td>${i + 1}</td>
+            <td><strong>${t.name}</strong></td>
+            <td>${t.played}</td>
+            <td>${t.points}</td>
+            <td>${t.ppg.toFixed(2)}</td>
+            <td><span class="badge ${badgeClass(t.attack)}">${formatDecimal(t.attack)}</span></td>
+            <td><span class="badge ${badgeClass(t.defense, true)}">${formatDecimal(t.defense)}</span></td>
+            <td class="${supClass}"><strong>${t.supremacy >= 0 ? "+" : ""}${t.supremacy.toFixed(2)}</strong></td>
+            <td>${t.form}</td>
+          </tr>`;
+        }).join("")}
+        </tbody>
+      </table>`;
+  }
+
+  // ========= RENDER: TIPS =========
+  function renderTips(tips) {
+    const el = document.getElementById("tipsContainer");
+    if (!el) return;
+
+    if (!tips.length) {
+      el.innerHTML = '<p class="small-note">Sem value bets identificadas para este jogo com as odds disponíveis.</p>';
+      return;
+    }
+
+    el.innerHTML = `
+      <table>
+        <thead><tr><th>Mercado</th><th>Prob.</th><th>Odd justa</th><th>Odd mercado</th><th>Edge</th><th>Kelly (25%)</th><th>Leitura</th></tr></thead>
+        <tbody>${tips.map(t => `
+          <tr>
+            <td><strong>${t.label}</strong></td>
+            <td>${formatPercent(t.prob)}</td>
+            <td>${formatOdd(t.fairOdd)}</td>
+            <td>${formatOdd(t.odd)}</td>
+            <td class="edge-positive">+${t.edge.toFixed(1)}%</td>
+            <td><strong>${(t.kelly * 100).toFixed(1)}%</strong></td>
+            <td><span class="badge good">${t.edge >= 10 ? "forte" : "valor"}</span></td>
+          </tr>`).join("")}
+        </tbody>
+      </table>`;
+  }
+
   function renderContextInfo(model) {
     if (!elements.restInfo) {
       return;
@@ -1058,11 +1396,23 @@
     elements.over25.textContent = formatPercent(probabilities.over25);
     elements.btts.textContent = formatPercent(probabilities.btts);
 
+    const extendedMarkets = calculateExtendedMarkets(model.expectedHomeGoals, model.expectedAwayGoals, model.rho);
+    const handicaps = calculateHandicaps(model.expectedHomeGoals, model.expectedAwayGoals, model.rho);
+    const htftProbs = calculateHtFtCombined(model.expectedHomeGoalsHT, model.expectedAwayGoalsHT, model.expectedHomeGoals, model.expectedAwayGoals);
+    const goalTiming = estimateGoalTiming(model.expectedHomeGoals, model.expectedAwayGoals);
+    const tips = generateTips(probabilities, extendedMarkets, bestImported);
+
     renderStrengthTable(homeTeam, awayTeam, model);
     renderTopScores(probabilities.exactScores);
     renderHalfTimeTable(halfTimeProbabilities);
     renderMarketTable(probabilities, bestImported);
     renderContextInfo(model);
+    renderExtendedMarkets(extendedMarkets, probabilities);
+    renderHandicaps(handicaps);
+    renderHtFtTable(htftProbs);
+    renderGoalTiming(goalTiming);
+    renderPowerRanking(league);
+    renderTips(tips);
   }
 
   function refreshDataStatus() {
