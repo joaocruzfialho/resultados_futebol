@@ -1517,20 +1517,20 @@
   // Maps The Odds API team names → snapshot team names
   const ODDS_TEAM_ALIASES = {
     // Portugal
-    "sporting cp": "Sp Lisbon", "sporting lisbon": "Sp Lisbon", "sporting": "Sp Lisbon",
+    "sporting cp": "Sp Lisbon", "sporting lisbon": "Sp Lisbon", "sporting": "Sp Lisbon", "sporting clube de portugal": "Sp Lisbon",
     "fc porto": "Porto", "porto fc": "Porto",
-    "sl benfica": "Benfica", "benfica": "Benfica",
-    "sc braga": "Sp Braga", "sporting braga": "Sp Braga", "braga": "Sp Braga",
+    "sl benfica": "Benfica", "benfica": "Benfica", "sport lisboa e benfica": "Benfica",
+    "sc braga": "Sp Braga", "sporting braga": "Sp Braga", "braga": "Sp Braga", "sporting de braga": "Sp Braga",
     "fc famalicao": "Famalicao", "famalicão": "Famalicao",
-    "vitoria guimaraes": "Guimaraes", "vitória guimarães": "Guimaraes", "vitoria sc": "Guimaraes", "guimarães": "Guimaraes",
-    "gil vicente fc": "Gil Vicente",
-    "estoril praia": "Estoril", "gd estoril praia": "Estoril",
-    "moreirense fc": "Moreirense",
-    "rio ave fc": "Rio Ave",
+    "vitoria guimaraes": "Guimaraes", "vitoria de guimaraes": "Guimaraes", "vitória de guimarães": "Guimaraes", "vitória guimarães": "Guimaraes", "vitoria sc": "Guimaraes", "guimarães": "Guimaraes", "guimaraes": "Guimaraes", "vit. guimaraes": "Guimaraes", "v. guimaraes": "Guimaraes",
+    "gil vicente fc": "Gil Vicente", "gil vicente": "Gil Vicente",
+    "estoril praia": "Estoril", "gd estoril praia": "Estoril", "estoril": "Estoril",
+    "moreirense fc": "Moreirense", "moreirense": "Moreirense",
+    "rio ave fc": "Rio Ave", "rio ave": "Rio Ave",
     "cd santa clara": "Santa Clara", "santa clara": "Santa Clara",
     "estrela amadora": "Estrela", "cf estrela amadora": "Estrela", "estrela da amadora": "Estrela",
     "casa pia ac": "Casa Pia", "casa pia": "Casa Pia",
-    "cd nacional": "Nacional", "nacional": "Nacional",
+    "cd nacional": "Nacional", "nacional": "Nacional", "nacional da madeira": "Nacional",
     "cd tondela": "Tondela", "tondela": "Tondela",
     "fc alverca": "Alverca", "alverca": "Alverca",
     "fc arouca": "Arouca", "arouca": "Arouca",
@@ -1582,16 +1582,30 @@
   }
 
   function resolveTeamName(apiName, leagueTeams) {
-    // 1. Try alias map (case-insensitive)
     const lower = String(apiName || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+
+    // 1. Try alias map (exact)
     if (ODDS_TEAM_ALIASES[lower]) return ODDS_TEAM_ALIASES[lower];
 
-    // 2. Try normalized match against snapshot teams
+    // 2. Try alias map stripping common words (de, do, da, fc, sc, cd, cf, ac, ud, gd, sd, sad)
+    const stripped = lower.replace(/\b(de|do|da|dos|das|fc|sc|cd|cf|ac|ud|gd|sd|sad|club|clube)\b/g, "").replace(/\s+/g, " ").trim();
+    if (ODDS_TEAM_ALIASES[stripped]) return ODDS_TEAM_ALIASES[stripped];
+
+    // 3. Try each alias key as substring match
+    for (const [alias, snapshotName] of Object.entries(ODDS_TEAM_ALIASES)) {
+      const aliasNorm = alias.replace(/[^a-z0-9]/g, "");
+      const lowerNorm = lower.replace(/[^a-z0-9]/g, "");
+      if (aliasNorm.length >= 5 && lowerNorm.length >= 5 && (aliasNorm.includes(lowerNorm) || lowerNorm.includes(aliasNorm))) {
+        return snapshotName;
+      }
+    }
+
+    // 4. Try normalized match against snapshot teams
     const n = normalizeForMatch(apiName);
     const exact = leagueTeams.find(t => normalizeForMatch(t.name) === n);
     if (exact) return exact.name;
 
-    // 3. Try partial match
+    // 5. Try partial match against snapshot teams
     const partial = leagueTeams.find(t => {
       const tn = normalizeForMatch(t.name);
       return (tn.includes(n) || n.includes(tn)) && Math.min(tn.length, n.length) >= 4;
