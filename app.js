@@ -907,8 +907,11 @@
     }
 
     if (!fixture) {
-      elements.autoOddsNote.textContent = "Sem odds auto-importadas para esta combinação de equipas no ficheiro público atual.";
-      elements.bookmakerTable.innerHTML = "<p class=\"small-note\">Escolha um jogo agendado na época 2025/26 para ver as odds por casa de apostas e a melhor odd disponível.</p>";
+      const hasKey = Boolean(getStoredApiKey());
+      elements.autoOddsNote.textContent = hasKey
+        ? "Sem odds encontradas para esta combinação. Clique em \"Buscar odds agora\" nas definições abaixo."
+        : "Sem odds para este jogo. Configure a chave da The Odds API nas definições abaixo para importar odds ao vivo.";
+      elements.bookmakerTable.innerHTML = `<p class="small-note">${hasKey ? "As odds aparecerão automaticamente quando existir um jogo agendado para estas equipas na API." : "Para ver odds ao vivo, registe-se grátis em <strong>the-odds-api.com</strong> e cole a chave na secção <strong>Definições de Odds ao Vivo</strong> abaixo."}</p>`;
       return { home: null, draw: null, away: null, over25: null };
     }
 
@@ -1513,17 +1516,109 @@
     }) || null;
   }
 
+  function findOrCreateFixture(league, event) {
+    let fixture = findFixtureForOddsEvent(league, event.home_team, event.away_team);
+    if (fixture) return fixture;
+
+    // Map API team name to snapshot team name
+    const teams = league.teams || [];
+    const mapToSnapshotName = (apiName) => {
+      const n = normalizeForMatch(apiName);
+      const exact = teams.find(t => normalizeForMatch(t.name) === n);
+      if (exact) return exact.name;
+      const partial = teams.find(t => {
+        const tn = normalizeForMatch(t.name);
+        return tn.includes(n) || n.includes(tn);
+      });
+      return partial ? partial.name : apiName;
+    };
+
+    const homeName = mapToSnapshotName(event.home_team);
+    const awayName = mapToSnapshotName(event.away_team);
+    const eventDate = event.commence_time ? new Date(event.commence_time) : new Date();
+    const dateStr = `${String(eventDate.getDate()).padStart(2, "0")}/${String(eventDate.getMonth() + 1).padStart(2, "0")}/${eventDate.getFullYear()}`;
+    const timeStr = `${String(eventDate.getHours()).padStart(2, "0")}:${String(eventDate.getMinutes()).padStart(2, "0")}`;
+
+    fixture = {
+      date: dateStr,
+      time: timeStr,
+      dateIso: eventDate.toISOString(),
+      homeTeam: homeName,
+      awayTeam: awayName,
+      played: false,
+      homeGoals: null,
+      awayGoals: null,
+      halfTimeHomeGoals: null,
+      halfTimeAwayGoals: null,
+      bookmakerOdds: {},
+      oddsSource: "live",
+      apiProvider: "The Odds API (ao vivo)"
+    };
+
+    if (!Array.isArray(league.fixtures)) league.fixtures = [];
+    league.fixtures.push(fixture);
+    return fixture;
+  }
+
+  function parseOddsFromEvent(event) {
+    const bookmakerOdds = {};
+    const hn = normalizeForMatch(event.home_team);
+    const an = normalizeForMatch(event.away_team);
+
+    for (const bm of event.bookmakers || []) {
+      const entry = {
+        key: (bm.key || "").toLowerCase(),
+        name: bm.title || bm.key || "Bookmaker",
+        home: null, draw: null, away: null, over25: null, under25: null,
+        source: "odds-api-live",
+        provider: "The Odds API (ao vivo)"
+      };
+
+      for (const market of bm.markets || []) {
+        if (market.key === "h2h") {
+          for (const o of market.outcomes || []) {
+            const price = Number(o.price);
+            if (!Number.isFinite(price) || price <= 1) continue;
+            const oName = normalizeForMatch(o.name);
+            if (oName === hn || oName.includes(hn) || hn.includes(oName)) entry.home = price;
+            else if (oName === an || oName.includes(an) || an.includes(oName)) entry.away = price;
+            else if (oName === "draw") entry.draw = price;
+          }
+        }
+        if (market.key === "totals") {
+          for (const o of market.outcomes || []) {
+            const price = Number(o.price);
+            if (!Number.isFinite(price) || price <= 1) continue;
+            const point = Number(o.point);
+            if (Math.abs((point || 2.5) - 2.5) < 0.01) {
+              if (String(o.name).toLowerCase() === "over") entry.over25 = price;
+              else entry.under25 = price;
+            }
+          }
+        }
+      }
+
+      if ([entry.home, entry.draw, entry.away, entry.over25].some(v => v !== null)) {
+        bookmakerOdds[entry.key] = entry;
+      }
+    }
+
+    return bookmakerOdds;
+  }
+
   async function fetchLiveOdds() {
     const apiKey = getStoredApiKey();
     if (!apiKey) {
-      if (oddsApiStatus) oddsApiStatus.textContent = "Sem chave API configurada. Introduza a chave acima.";
+      if (oddsApiStatus) oddsApiStatus.textContent = "Sem chave API configurada. Introduza a chave da The Odds API acima para ver odds ao vivo.";
       return;
     }
 
-    if (oddsApiStatus) oddsApiStatus.textContent = "A buscar odds ao vivo...";
+    if (oddsApiStatus) oddsApiStatus.textContent = "A buscar odds ao vivo para todas as ligas...";
 
     let totalMatched = 0;
+    let totalCreated = 0;
     let totalEvents = 0;
+    const errors = [];
 
     for (const leagueKey of leagueKeys) {
       const sportKey = ODDS_API_SPORT_KEYS[leagueKey];
@@ -1535,74 +1630,51 @@
         const response = await fetch(url);
 
         if (!response.ok) {
-          const errorText = response.status === 401 ? "Chave API inválida" : `Erro ${response.status}`;
-          if (oddsApiStatus) oddsApiStatus.textContent = `${errorText} ao buscar ${league.name}.`;
-          return;
+          const errorText = response.status === 401 ? "Chave API inválida" : response.status === 429 ? "Limite de pedidos atingido" : `Erro ${response.status}`;
+          errors.push(`${league.name}: ${errorText}`);
+          continue;
         }
 
+        const remaining = response.headers.get("x-requests-remaining");
         const events = await response.json();
         totalEvents += events.length;
 
         for (const event of events) {
-          const fixture = findFixtureForOddsEvent(league, event.home_team, event.away_team);
-          if (!fixture) continue;
+          const existingFixture = findFixtureForOddsEvent(league, event.home_team, event.away_team);
+          const fixture = existingFixture || findOrCreateFixture(league, event);
 
-          const bookmakerOdds = fixture.bookmakerOdds || {};
-          for (const bm of event.bookmakers || []) {
-            const entry = {
-              key: (bm.key || "").toLowerCase(),
-              name: bm.title || bm.key || "Bookmaker",
-              home: null, draw: null, away: null, over25: null, under25: null,
-              source: "odds-api-live",
-              provider: "The Odds API (ao vivo)"
-            };
+          if (!existingFixture) totalCreated++;
 
-            for (const market of bm.markets || []) {
-              if (market.key === "h2h") {
-                for (const o of market.outcomes || []) {
-                  const price = Number(o.price);
-                  if (!Number.isFinite(price) || price <= 1) continue;
-                  const oName = normalizeForMatch(o.name);
-                  const hn = normalizeForMatch(event.home_team);
-                  const an = normalizeForMatch(event.away_team);
-                  if (oName === hn || oName.includes(hn) || hn.includes(oName)) entry.home = price;
-                  else if (oName === an || oName.includes(an) || an.includes(oName)) entry.away = price;
-                  else if (oName === "draw") entry.draw = price;
-                }
-              }
-              if (market.key === "totals") {
-                for (const o of market.outcomes || []) {
-                  const price = Number(o.price);
-                  if (!Number.isFinite(price) || price <= 1) continue;
-                  const point = Number(o.point);
-                  if (Math.abs((point || 2.5) - 2.5) < 0.01) {
-                    if (String(o.name).toLowerCase() === "over") entry.over25 = price;
-                    else entry.under25 = price;
-                  }
-                }
-              }
-            }
-
-            if ([entry.home, entry.draw, entry.away, entry.over25].some(v => v !== null)) {
-              bookmakerOdds[entry.key] = entry;
-            }
-          }
-
-          fixture.bookmakerOdds = bookmakerOdds;
+          const oddsData = parseOddsFromEvent(event);
+          fixture.bookmakerOdds = { ...(fixture.bookmakerOdds || {}), ...oddsData };
           fixture.oddsSource = "live";
           fixture.apiProvider = "The Odds API (ao vivo)";
+          fixture.lastOddsUpdate = new Date().toISOString();
           totalMatched++;
         }
+
+        if (remaining) {
+          const rem = Number(remaining);
+          if (rem < 50 && oddsApiStatus) {
+            errors.push(`Restam ${rem} pedidos na API`);
+          }
+        }
       } catch (error) {
-        if (oddsApiStatus) oddsApiStatus.textContent = `Erro ao buscar ${league.name}: ${error.message}`;
-        return;
+        errors.push(`${league.name}: ${error.message}`);
       }
     }
 
     if (oddsApiStatus) {
-      oddsApiStatus.textContent = `Odds ao vivo atualizadas: ${totalMatched} jogos encontrados de ${totalEvents} eventos. Última atualização: ${new Date().toLocaleTimeString("pt-PT")}.`;
+      const parts = [`${totalMatched} jogos com odds ao vivo`];
+      if (totalCreated > 0) parts.push(`${totalCreated} novos fixtures criados`);
+      parts.push(`${totalEvents} eventos totais`);
+      parts.push(`atualizado às ${new Date().toLocaleTimeString("pt-PT")}`);
+      if (errors.length) parts.push(`Avisos: ${errors.join("; ")}`);
+      oddsApiStatus.textContent = parts.join(" • ");
     }
 
+    // Refresh team selectors and prediction with new fixtures
+    populateTeamOptions();
     renderPrediction();
   }
 
