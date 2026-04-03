@@ -378,15 +378,28 @@
     };
   }
 
+  function teamsMatch(fixtureTeam, selectedTeam) {
+    if (fixtureTeam === selectedTeam) return true;
+    const a = String(fixtureTeam || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const b = String(selectedTeam || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (!a || !b) return false;
+    return a === b || (a.length >= 4 && b.length >= 4 && (a.includes(b) || b.includes(a)));
+  }
+
   function findRelevantFixture(league, homeTeamName, awayTeamName) {
     const fixtures = Array.isArray(league.fixtures) ? league.fixtures : [];
-    const exactFixtures = fixtures.filter((fixture) => fixture.homeTeam === homeTeamName && fixture.awayTeam === awayTeamName);
 
-    if (!exactFixtures.length) {
+    // Try exact match first, then fuzzy
+    let matched = fixtures.filter((f) => f.homeTeam === homeTeamName && f.awayTeam === awayTeamName);
+    if (!matched.length) {
+      matched = fixtures.filter((f) => teamsMatch(f.homeTeam, homeTeamName) && teamsMatch(f.awayTeam, awayTeamName));
+    }
+
+    if (!matched.length) {
       return null;
     }
 
-    const upcoming = exactFixtures
+    const upcoming = matched
       .filter((fixture) => !fixture.played)
       .sort((a, b) => getFixtureTimestamp(a) - getFixtureTimestamp(b));
 
@@ -394,7 +407,7 @@
       return upcoming[0];
     }
 
-    return exactFixtures.sort((a, b) => getFixtureTimestamp(b) - getFixtureTimestamp(a))[0];
+    return matched.sort((a, b) => getFixtureTimestamp(b) - getFixtureTimestamp(a))[0];
   }
 
   function getLastPlayedFixtureBefore(league, teamName, referenceTime) {
