@@ -1,6 +1,6 @@
 window.DATA_SNAPSHOT = {
   "season": "2025/26",
-  "generatedAt": "2026-04-03T14:58:03.538Z",
+  "generatedAt": "2026-04-03T19:56:20.256Z",
   "sourceNote": "Dados públicos recolhidos de football-data.co.uk com xG real do Understat (quando disponível), contexto de descanso, estatísticas HT e odds por casa. Se existir ODDS_API_KEY, a app junta odds ao vivo via The Odds API.",
   "leagues": {
     "portugal": {
@@ -47,7 +47,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "08/08/2025",
           "time": "20:15",
-          "dateIso": "2025-08-08T19:15:00.000Z",
+          "dateIso": "2025-08-08T20:15:00.000Z",
           "homeTeam": "Casa Pia",
           "awayTeam": "Sp Lisbon",
           "played": true,
@@ -138,7 +138,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "09/08/2025",
           "time": "15:30",
-          "dateIso": "2025-08-09T14:30:00.000Z",
+          "dateIso": "2025-08-09T15:30:00.000Z",
           "homeTeam": "Nacional",
           "awayTeam": "Gil Vicente",
           "played": true,
@@ -229,7 +229,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "09/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-09T19:30:00.000Z",
+          "dateIso": "2025-08-09T20:30:00.000Z",
           "homeTeam": "Arouca",
           "awayTeam": "AVS",
           "played": true,
@@ -320,7 +320,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "10/08/2025",
           "time": "17:00",
-          "dateIso": "2025-08-10T16:00:00.000Z",
+          "dateIso": "2025-08-10T17:00:00.000Z",
           "homeTeam": "Famalicao",
           "awayTeam": "Santa Clara",
           "played": true,
@@ -411,7 +411,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "10/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-10T19:30:00.000Z",
+          "dateIso": "2025-08-10T20:30:00.000Z",
           "homeTeam": "Moreirense",
           "awayTeam": "Alverca",
           "played": true,
@@ -502,7 +502,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "10/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-10T19:30:00.000Z",
+          "dateIso": "2025-08-10T20:30:00.000Z",
           "homeTeam": "Sp Braga",
           "awayTeam": "Tondela",
           "played": true,
@@ -593,7 +593,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "11/08/2025",
           "time": "18:45",
-          "dateIso": "2025-08-11T17:45:00.000Z",
+          "dateIso": "2025-08-11T18:45:00.000Z",
           "homeTeam": "Estoril",
           "awayTeam": "Estrela",
           "played": true,
@@ -684,7 +684,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "11/08/2025",
           "time": "20:45",
-          "dateIso": "2025-08-11T19:45:00.000Z",
+          "dateIso": "2025-08-11T20:45:00.000Z",
           "homeTeam": "Porto",
           "awayTeam": "Guimaraes",
           "played": true,
@@ -775,7 +775,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "15/08/2025",
           "time": "15:30",
-          "dateIso": "2025-08-15T14:30:00.000Z",
+          "dateIso": "2025-08-15T15:30:00.000Z",
           "homeTeam": "AVS",
           "awayTeam": "Casa Pia",
           "played": true,
@@ -866,7 +866,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "15:30",
-          "dateIso": "2025-08-16T14:30:00.000Z",
+          "dateIso": "2025-08-16T15:30:00.000Z",
           "homeTeam": "Tondela",
           "awayTeam": "Famalicao",
           "played": true,
@@ -957,7 +957,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-16T17:00:00.000Z",
+          "dateIso": "2025-08-16T18:00:00.000Z",
           "homeTeam": "Guimaraes",
           "awayTeam": "Estoril",
           "played": true,
@@ -1048,7 +1048,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-16T19:30:00.000Z",
+          "dateIso": "2025-08-16T20:30:00.000Z",
           "homeTeam": "Estrela",
           "awayTeam": "Benfica",
           "played": true,
@@ -1139,7 +1139,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "15:30",
-          "dateIso": "2025-08-17T14:30:00.000Z",
+          "dateIso": "2025-08-17T15:30:00.000Z",
           "homeTeam": "Rio Ave",
           "awayTeam": "Nacional",
           "played": true,
@@ -1230,7 +1230,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-17T17:00:00.000Z",
+          "dateIso": "2025-08-17T18:00:00.000Z",
           "homeTeam": "Alverca",
           "awayTeam": "Sp Braga",
           "played": true,
@@ -1321,7 +1321,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-17T17:00:00.000Z",
+          "dateIso": "2025-08-17T18:00:00.000Z",
           "homeTeam": "Santa Clara",
           "awayTeam": "Moreirense",
           "played": true,
@@ -1412,7 +1412,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-17T19:30:00.000Z",
+          "dateIso": "2025-08-17T20:30:00.000Z",
           "homeTeam": "Sp Lisbon",
           "awayTeam": "Arouca",
           "played": true,
@@ -1503,7 +1503,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/08/2025",
           "time": "20:15",
-          "dateIso": "2025-08-18T19:15:00.000Z",
+          "dateIso": "2025-08-18T20:15:00.000Z",
           "homeTeam": "Gil Vicente",
           "awayTeam": "Porto",
           "played": true,
@@ -1594,7 +1594,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "16:00",
-          "dateIso": "2025-08-23T15:00:00.000Z",
+          "dateIso": "2025-08-23T16:00:00.000Z",
           "homeTeam": "Moreirense",
           "awayTeam": "Guimaraes",
           "played": true,
@@ -1685,7 +1685,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-23T17:00:00.000Z",
+          "dateIso": "2025-08-23T18:00:00.000Z",
           "homeTeam": "Nacional",
           "awayTeam": "Sp Lisbon",
           "played": true,
@@ -1776,7 +1776,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-23T19:30:00.000Z",
+          "dateIso": "2025-08-23T20:30:00.000Z",
           "homeTeam": "Arouca",
           "awayTeam": "Rio Ave",
           "played": true,
@@ -1867,7 +1867,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-23T19:30:00.000Z",
+          "dateIso": "2025-08-23T20:30:00.000Z",
           "homeTeam": "Benfica",
           "awayTeam": "Tondela",
           "played": true,
@@ -1958,7 +1958,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "15:30",
-          "dateIso": "2025-08-24T14:30:00.000Z",
+          "dateIso": "2025-08-24T15:30:00.000Z",
           "homeTeam": "Famalicao",
           "awayTeam": "Gil Vicente",
           "played": true,
@@ -2049,7 +2049,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-24T17:00:00.000Z",
+          "dateIso": "2025-08-24T18:00:00.000Z",
           "homeTeam": "Porto",
           "awayTeam": "Casa Pia",
           "played": true,
@@ -2140,7 +2140,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-24T19:30:00.000Z",
+          "dateIso": "2025-08-24T20:30:00.000Z",
           "homeTeam": "Sp Braga",
           "awayTeam": "AVS",
           "played": true,
@@ -2231,7 +2231,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/08/2025",
           "time": "20:15",
-          "dateIso": "2025-08-25T19:15:00.000Z",
+          "dateIso": "2025-08-25T20:15:00.000Z",
           "homeTeam": "Estrela",
           "awayTeam": "Alverca",
           "played": true,
@@ -2322,7 +2322,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "29/08/2025",
           "time": "20:15",
-          "dateIso": "2025-08-29T19:15:00.000Z",
+          "dateIso": "2025-08-29T20:15:00.000Z",
           "homeTeam": "Gil Vicente",
           "awayTeam": "Moreirense",
           "played": true,
@@ -2413,7 +2413,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "15:30",
-          "dateIso": "2025-08-30T14:30:00.000Z",
+          "dateIso": "2025-08-30T15:30:00.000Z",
           "homeTeam": "Casa Pia",
           "awayTeam": "Nacional",
           "played": true,
@@ -2504,7 +2504,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-30T17:00:00.000Z",
+          "dateIso": "2025-08-30T18:00:00.000Z",
           "homeTeam": "AVS",
           "awayTeam": "Famalicao",
           "played": true,
@@ -2595,7 +2595,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-30T17:00:00.000Z",
+          "dateIso": "2025-08-30T18:00:00.000Z",
           "homeTeam": "Guimaraes",
           "awayTeam": "Arouca",
           "played": true,
@@ -2686,7 +2686,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-30T19:30:00.000Z",
+          "dateIso": "2025-08-30T20:30:00.000Z",
           "homeTeam": "Sp Lisbon",
           "awayTeam": "Porto",
           "played": true,
@@ -2777,7 +2777,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "15:30",
-          "dateIso": "2025-08-31T14:30:00.000Z",
+          "dateIso": "2025-08-31T15:30:00.000Z",
           "homeTeam": "Tondela",
           "awayTeam": "Estoril",
           "played": true,
@@ -2868,7 +2868,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-31T17:00:00.000Z",
+          "dateIso": "2025-08-31T18:00:00.000Z",
           "homeTeam": "Alverca",
           "awayTeam": "Benfica",
           "played": true,
@@ -2959,7 +2959,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-31T19:30:00.000Z",
+          "dateIso": "2025-08-31T20:30:00.000Z",
           "homeTeam": "Rio Ave",
           "awayTeam": "Sp Braga",
           "played": true,
@@ -3050,7 +3050,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-31T19:30:00.000Z",
+          "dateIso": "2025-08-31T20:30:00.000Z",
           "homeTeam": "Santa Clara",
           "awayTeam": "Estrela",
           "played": true,
@@ -3141,7 +3141,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "06/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-06T19:30:00.000Z",
+          "dateIso": "2025-09-06T20:30:00.000Z",
           "homeTeam": "Estoril",
           "awayTeam": "Santa Clara",
           "played": true,
@@ -3232,7 +3232,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "12/09/2025",
           "time": "20:15",
-          "dateIso": "2025-09-12T19:15:00.000Z",
+          "dateIso": "2025-09-12T20:15:00.000Z",
           "homeTeam": "Alverca",
           "awayTeam": "Tondela",
           "played": true,
@@ -3323,7 +3323,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "12/09/2025",
           "time": "20:15",
-          "dateIso": "2025-09-12T19:15:00.000Z",
+          "dateIso": "2025-09-12T20:15:00.000Z",
           "homeTeam": "Benfica",
           "awayTeam": "Santa Clara",
           "played": true,
@@ -3414,7 +3414,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "15:30",
-          "dateIso": "2025-09-13T14:30:00.000Z",
+          "dateIso": "2025-09-13T15:30:00.000Z",
           "homeTeam": "Estoril",
           "awayTeam": "AVS",
           "played": true,
@@ -3505,7 +3505,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "15:30",
-          "dateIso": "2025-09-13T14:30:00.000Z",
+          "dateIso": "2025-09-13T15:30:00.000Z",
           "homeTeam": "Moreirense",
           "awayTeam": "Rio Ave",
           "played": true,
@@ -3596,7 +3596,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-13T17:00:00.000Z",
+          "dateIso": "2025-09-13T18:00:00.000Z",
           "homeTeam": "Porto",
           "awayTeam": "Nacional",
           "played": true,
@@ -3687,7 +3687,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-13T19:30:00.000Z",
+          "dateIso": "2025-09-13T20:30:00.000Z",
           "homeTeam": "Famalicao",
           "awayTeam": "Sp Lisbon",
           "played": true,
@@ -3778,7 +3778,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "15:30",
-          "dateIso": "2025-09-14T14:30:00.000Z",
+          "dateIso": "2025-09-14T15:30:00.000Z",
           "homeTeam": "Estrela",
           "awayTeam": "Guimaraes",
           "played": true,
@@ -3869,7 +3869,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-14T17:00:00.000Z",
+          "dateIso": "2025-09-14T18:00:00.000Z",
           "homeTeam": "Arouca",
           "awayTeam": "Casa Pia",
           "played": true,
@@ -3960,7 +3960,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-14T19:30:00.000Z",
+          "dateIso": "2025-09-14T20:30:00.000Z",
           "homeTeam": "Sp Braga",
           "awayTeam": "Gil Vicente",
           "played": true,
@@ -4051,7 +4051,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/09/2025",
           "time": "20:15",
-          "dateIso": "2025-09-19T19:15:00.000Z",
+          "dateIso": "2025-09-19T20:15:00.000Z",
           "homeTeam": "Rio Ave",
           "awayTeam": "Porto",
           "played": true,
@@ -4142,7 +4142,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "15:30",
-          "dateIso": "2025-09-20T14:30:00.000Z",
+          "dateIso": "2025-09-20T15:30:00.000Z",
           "homeTeam": "Nacional",
           "awayTeam": "Arouca",
           "played": true,
@@ -4233,7 +4233,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "15:30",
-          "dateIso": "2025-09-20T14:30:00.000Z",
+          "dateIso": "2025-09-20T15:30:00.000Z",
           "homeTeam": "Santa Clara",
           "awayTeam": "Alverca",
           "played": true,
@@ -4324,7 +4324,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-20T17:00:00.000Z",
+          "dateIso": "2025-09-20T18:00:00.000Z",
           "homeTeam": "AVS",
           "awayTeam": "Benfica",
           "played": true,
@@ -4415,7 +4415,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-20T19:30:00.000Z",
+          "dateIso": "2025-09-20T20:30:00.000Z",
           "homeTeam": "Guimaraes",
           "awayTeam": "Sp Braga",
           "played": true,
@@ -4506,7 +4506,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "15:30",
-          "dateIso": "2025-09-21T14:30:00.000Z",
+          "dateIso": "2025-09-21T15:30:00.000Z",
           "homeTeam": "Tondela",
           "awayTeam": "Estrela",
           "played": true,
@@ -4597,7 +4597,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-21T17:00:00.000Z",
+          "dateIso": "2025-09-21T18:00:00.000Z",
           "homeTeam": "Gil Vicente",
           "awayTeam": "Estoril",
           "played": true,
@@ -4688,7 +4688,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-21T19:30:00.000Z",
+          "dateIso": "2025-09-21T20:30:00.000Z",
           "homeTeam": "Casa Pia",
           "awayTeam": "Famalicao",
           "played": true,
@@ -4779,7 +4779,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "22/09/2025",
           "time": "20:15",
-          "dateIso": "2025-09-22T19:15:00.000Z",
+          "dateIso": "2025-09-22T20:15:00.000Z",
           "homeTeam": "Sp Lisbon",
           "awayTeam": "Moreirense",
           "played": true,
@@ -4870,7 +4870,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/09/2025",
           "time": "20:15",
-          "dateIso": "2025-09-23T19:15:00.000Z",
+          "dateIso": "2025-09-23T20:15:00.000Z",
           "homeTeam": "Benfica",
           "awayTeam": "Rio Ave",
           "played": true,
@@ -4961,7 +4961,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "26/09/2025",
           "time": "20:15",
-          "dateIso": "2025-09-26T19:15:00.000Z",
+          "dateIso": "2025-09-26T20:15:00.000Z",
           "homeTeam": "Benfica",
           "awayTeam": "Gil Vicente",
           "played": true,
@@ -5052,7 +5052,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "15:30",
-          "dateIso": "2025-09-27T14:30:00.000Z",
+          "dateIso": "2025-09-27T15:30:00.000Z",
           "homeTeam": "Moreirense",
           "awayTeam": "Casa Pia",
           "played": true,
@@ -5143,7 +5143,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "16:30",
-          "dateIso": "2025-09-27T15:30:00.000Z",
+          "dateIso": "2025-09-27T16:30:00.000Z",
           "homeTeam": "Santa Clara",
           "awayTeam": "Tondela",
           "played": true,
@@ -5234,7 +5234,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-27T17:00:00.000Z",
+          "dateIso": "2025-09-27T18:00:00.000Z",
           "homeTeam": "Estrela",
           "awayTeam": "AVS",
           "played": true,
@@ -5325,7 +5325,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-27T19:30:00.000Z",
+          "dateIso": "2025-09-27T20:30:00.000Z",
           "homeTeam": "Estoril",
           "awayTeam": "Sp Lisbon",
           "played": true,
@@ -5416,7 +5416,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "15:30",
-          "dateIso": "2025-09-28T14:30:00.000Z",
+          "dateIso": "2025-09-28T15:30:00.000Z",
           "homeTeam": "Alverca",
           "awayTeam": "Guimaraes",
           "played": true,
@@ -5507,7 +5507,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-28T17:00:00.000Z",
+          "dateIso": "2025-09-28T18:00:00.000Z",
           "homeTeam": "Sp Braga",
           "awayTeam": "Nacional",
           "played": true,
@@ -5598,7 +5598,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-28T19:30:00.000Z",
+          "dateIso": "2025-09-28T20:30:00.000Z",
           "homeTeam": "Famalicao",
           "awayTeam": "Rio Ave",
           "played": true,
@@ -5678,7 +5678,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "29/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-29T19:00:00.000Z",
+          "dateIso": "2025-09-29T20:00:00.000Z",
           "homeTeam": "Arouca",
           "awayTeam": "Porto",
           "played": true,
@@ -5769,7 +5769,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "03/10/2025",
           "time": "20:15",
-          "dateIso": "2025-10-03T19:15:00.000Z",
+          "dateIso": "2025-10-03T20:15:00.000Z",
           "homeTeam": "Casa Pia",
           "awayTeam": "Estoril",
           "played": true,
@@ -5860,7 +5860,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "15:30",
-          "dateIso": "2025-10-04T14:30:00.000Z",
+          "dateIso": "2025-10-04T15:30:00.000Z",
           "homeTeam": "Gil Vicente",
           "awayTeam": "Estrela",
           "played": true,
@@ -5951,7 +5951,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "15:30",
-          "dateIso": "2025-10-04T14:30:00.000Z",
+          "dateIso": "2025-10-04T15:30:00.000Z",
           "homeTeam": "Nacional",
           "awayTeam": "Moreirense",
           "played": true,
@@ -6042,7 +6042,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "18:00",
-          "dateIso": "2025-10-04T17:00:00.000Z",
+          "dateIso": "2025-10-04T18:00:00.000Z",
           "homeTeam": "AVS",
           "awayTeam": "Alverca",
           "played": true,
@@ -6133,7 +6133,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "20:30",
-          "dateIso": "2025-10-04T19:30:00.000Z",
+          "dateIso": "2025-10-04T20:30:00.000Z",
           "homeTeam": "Guimaraes",
           "awayTeam": "Santa Clara",
           "played": true,
@@ -6224,7 +6224,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "15:30",
-          "dateIso": "2025-10-05T14:30:00.000Z",
+          "dateIso": "2025-10-05T15:30:00.000Z",
           "homeTeam": "Arouca",
           "awayTeam": "Famalicao",
           "played": true,
@@ -6315,7 +6315,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-05T16:30:00.000Z",
+          "dateIso": "2025-10-05T17:30:00.000Z",
           "homeTeam": "Rio Ave",
           "awayTeam": "Tondela",
           "played": true,
@@ -6406,7 +6406,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "19:15",
-          "dateIso": "2025-10-05T18:15:00.000Z",
+          "dateIso": "2025-10-05T19:15:00.000Z",
           "homeTeam": "Sp Lisbon",
           "awayTeam": "Sp Braga",
           "played": true,
@@ -6497,7 +6497,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "21:15",
-          "dateIso": "2025-10-05T20:15:00.000Z",
+          "dateIso": "2025-10-05T21:15:00.000Z",
           "homeTeam": "Porto",
           "awayTeam": "Benfica",
           "played": true,
@@ -6588,7 +6588,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/10/2025",
           "time": "20:15",
-          "dateIso": "2025-10-24T19:15:00.000Z",
+          "dateIso": "2025-10-24T20:15:00.000Z",
           "homeTeam": "Alverca",
           "awayTeam": "Gil Vicente",
           "played": true,
@@ -6679,7 +6679,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "18:00",
-          "dateIso": "2025-10-25T17:00:00.000Z",
+          "dateIso": "2025-10-25T18:00:00.000Z",
           "homeTeam": "Santa Clara",
           "awayTeam": "AVS",
           "played": true,
@@ -6770,7 +6770,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "20:30",
-          "dateIso": "2025-10-25T19:30:00.000Z",
+          "dateIso": "2025-10-25T20:30:00.000Z",
           "homeTeam": "Benfica",
           "awayTeam": "Arouca",
           "played": true,
@@ -6861,7 +6861,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "20:30",
-          "dateIso": "2025-10-25T19:30:00.000Z",
+          "dateIso": "2025-10-25T20:30:00.000Z",
           "homeTeam": "Estrela",
           "awayTeam": "Rio Ave",
           "played": true,
@@ -22686,7 +22686,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "15/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-15T17:00:00.000Z",
+          "dateIso": "2025-08-15T18:00:00.000Z",
           "homeTeam": "Girona",
           "awayTeam": "Vallecano",
           "played": true,
@@ -22777,7 +22777,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "15/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-15T19:30:00.000Z",
+          "dateIso": "2025-08-15T20:30:00.000Z",
           "homeTeam": "Villarreal",
           "awayTeam": "Oviedo",
           "played": true,
@@ -22868,7 +22868,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-16T17:30:00.000Z",
+          "dateIso": "2025-08-16T18:30:00.000Z",
           "homeTeam": "Mallorca",
           "awayTeam": "Barcelona",
           "played": true,
@@ -22959,7 +22959,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-16T19:30:00.000Z",
+          "dateIso": "2025-08-16T20:30:00.000Z",
           "homeTeam": "Alaves",
           "awayTeam": "Levante",
           "played": true,
@@ -23050,7 +23050,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-16T19:30:00.000Z",
+          "dateIso": "2025-08-16T20:30:00.000Z",
           "homeTeam": "Valencia",
           "awayTeam": "Sociedad",
           "played": true,
@@ -23141,7 +23141,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "16:00",
-          "dateIso": "2025-08-17T15:00:00.000Z",
+          "dateIso": "2025-08-17T16:00:00.000Z",
           "homeTeam": "Celta",
           "awayTeam": "Getafe",
           "played": true,
@@ -23232,7 +23232,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-17T17:30:00.000Z",
+          "dateIso": "2025-08-17T18:30:00.000Z",
           "homeTeam": "Ath Bilbao",
           "awayTeam": "Sevilla",
           "played": true,
@@ -23323,7 +23323,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-17T19:30:00.000Z",
+          "dateIso": "2025-08-17T20:30:00.000Z",
           "homeTeam": "Espanol",
           "awayTeam": "Ath Madrid",
           "played": true,
@@ -23414,7 +23414,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/08/2025",
           "time": "20:00",
-          "dateIso": "2025-08-18T19:00:00.000Z",
+          "dateIso": "2025-08-18T20:00:00.000Z",
           "homeTeam": "Elche",
           "awayTeam": "Betis",
           "played": true,
@@ -23505,7 +23505,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/08/2025",
           "time": "20:00",
-          "dateIso": "2025-08-19T19:00:00.000Z",
+          "dateIso": "2025-08-19T20:00:00.000Z",
           "homeTeam": "Real Madrid",
           "awayTeam": "Osasuna",
           "played": true,
@@ -23596,7 +23596,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "22/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-22T19:30:00.000Z",
+          "dateIso": "2025-08-22T20:30:00.000Z",
           "homeTeam": "Betis",
           "awayTeam": "Alaves",
           "played": true,
@@ -23687,7 +23687,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "16:00",
-          "dateIso": "2025-08-23T15:00:00.000Z",
+          "dateIso": "2025-08-23T16:00:00.000Z",
           "homeTeam": "Mallorca",
           "awayTeam": "Celta",
           "played": true,
@@ -23778,7 +23778,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-23T17:30:00.000Z",
+          "dateIso": "2025-08-23T18:30:00.000Z",
           "homeTeam": "Ath Madrid",
           "awayTeam": "Elche",
           "played": true,
@@ -23869,7 +23869,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-23T19:30:00.000Z",
+          "dateIso": "2025-08-23T20:30:00.000Z",
           "homeTeam": "Levante",
           "awayTeam": "Barcelona",
           "played": true,
@@ -23960,7 +23960,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "16:00",
-          "dateIso": "2025-08-24T15:00:00.000Z",
+          "dateIso": "2025-08-24T16:00:00.000Z",
           "homeTeam": "Osasuna",
           "awayTeam": "Valencia",
           "played": true,
@@ -24051,7 +24051,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-24T17:30:00.000Z",
+          "dateIso": "2025-08-24T18:30:00.000Z",
           "homeTeam": "Sociedad",
           "awayTeam": "Espanol",
           "played": true,
@@ -24142,7 +24142,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-24T17:30:00.000Z",
+          "dateIso": "2025-08-24T18:30:00.000Z",
           "homeTeam": "Villarreal",
           "awayTeam": "Girona",
           "played": true,
@@ -24233,7 +24233,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-24T19:30:00.000Z",
+          "dateIso": "2025-08-24T20:30:00.000Z",
           "homeTeam": "Oviedo",
           "awayTeam": "Real Madrid",
           "played": true,
@@ -24324,7 +24324,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-25T17:30:00.000Z",
+          "dateIso": "2025-08-25T18:30:00.000Z",
           "homeTeam": "Ath Bilbao",
           "awayTeam": "Vallecano",
           "played": true,
@@ -24415,7 +24415,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-25T19:30:00.000Z",
+          "dateIso": "2025-08-25T20:30:00.000Z",
           "homeTeam": "Sevilla",
           "awayTeam": "Getafe",
           "played": true,
@@ -24506,7 +24506,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/08/2025",
           "time": "20:00",
-          "dateIso": "2025-08-27T19:00:00.000Z",
+          "dateIso": "2025-08-27T20:00:00.000Z",
           "homeTeam": "Celta",
           "awayTeam": "Betis",
           "played": true,
@@ -24597,7 +24597,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "29/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-29T17:30:00.000Z",
+          "dateIso": "2025-08-29T18:30:00.000Z",
           "homeTeam": "Elche",
           "awayTeam": "Levante",
           "played": true,
@@ -24688,7 +24688,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "29/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-29T19:30:00.000Z",
+          "dateIso": "2025-08-29T20:30:00.000Z",
           "homeTeam": "Valencia",
           "awayTeam": "Getafe",
           "played": true,
@@ -24779,7 +24779,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "16:00",
-          "dateIso": "2025-08-30T15:00:00.000Z",
+          "dateIso": "2025-08-30T16:00:00.000Z",
           "homeTeam": "Alaves",
           "awayTeam": "Ath Madrid",
           "played": true,
@@ -24870,7 +24870,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-30T17:00:00.000Z",
+          "dateIso": "2025-08-30T18:00:00.000Z",
           "homeTeam": "Oviedo",
           "awayTeam": "Sociedad",
           "played": true,
@@ -24961,7 +24961,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-30T17:30:00.000Z",
+          "dateIso": "2025-08-30T18:30:00.000Z",
           "homeTeam": "Girona",
           "awayTeam": "Sevilla",
           "played": true,
@@ -25052,7 +25052,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-30T19:30:00.000Z",
+          "dateIso": "2025-08-30T20:30:00.000Z",
           "homeTeam": "Real Madrid",
           "awayTeam": "Mallorca",
           "played": true,
@@ -25143,7 +25143,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "16:00",
-          "dateIso": "2025-08-31T15:00:00.000Z",
+          "dateIso": "2025-08-31T16:00:00.000Z",
           "homeTeam": "Celta",
           "awayTeam": "Villarreal",
           "played": true,
@@ -25234,7 +25234,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "18:00",
-          "dateIso": "2025-08-31T17:00:00.000Z",
+          "dateIso": "2025-08-31T18:00:00.000Z",
           "homeTeam": "Betis",
           "awayTeam": "Ath Bilbao",
           "played": true,
@@ -25325,7 +25325,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "18:30",
-          "dateIso": "2025-08-31T17:30:00.000Z",
+          "dateIso": "2025-08-31T18:30:00.000Z",
           "homeTeam": "Espanol",
           "awayTeam": "Osasuna",
           "played": true,
@@ -25416,7 +25416,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "20:30",
-          "dateIso": "2025-08-31T19:30:00.000Z",
+          "dateIso": "2025-08-31T20:30:00.000Z",
           "homeTeam": "Vallecano",
           "awayTeam": "Barcelona",
           "played": true,
@@ -25507,7 +25507,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "12/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-12T19:00:00.000Z",
+          "dateIso": "2025-09-12T20:00:00.000Z",
           "homeTeam": "Sevilla",
           "awayTeam": "Elche",
           "played": true,
@@ -25598,7 +25598,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "13:00",
-          "dateIso": "2025-09-13T12:00:00.000Z",
+          "dateIso": "2025-09-13T13:00:00.000Z",
           "homeTeam": "Getafe",
           "awayTeam": "Oviedo",
           "played": true,
@@ -25689,7 +25689,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "15:15",
-          "dateIso": "2025-09-13T14:15:00.000Z",
+          "dateIso": "2025-09-13T15:15:00.000Z",
           "homeTeam": "Sociedad",
           "awayTeam": "Real Madrid",
           "played": true,
@@ -25780,7 +25780,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-13T16:30:00.000Z",
+          "dateIso": "2025-09-13T17:30:00.000Z",
           "homeTeam": "Ath Bilbao",
           "awayTeam": "Alaves",
           "played": true,
@@ -25871,7 +25871,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-13T19:00:00.000Z",
+          "dateIso": "2025-09-13T20:00:00.000Z",
           "homeTeam": "Ath Madrid",
           "awayTeam": "Villarreal",
           "played": true,
@@ -25962,7 +25962,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "13:00",
-          "dateIso": "2025-09-14T12:00:00.000Z",
+          "dateIso": "2025-09-14T13:00:00.000Z",
           "homeTeam": "Celta",
           "awayTeam": "Girona",
           "played": true,
@@ -26053,7 +26053,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "15:15",
-          "dateIso": "2025-09-14T14:15:00.000Z",
+          "dateIso": "2025-09-14T15:15:00.000Z",
           "homeTeam": "Levante",
           "awayTeam": "Betis",
           "played": true,
@@ -26144,7 +26144,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-14T16:30:00.000Z",
+          "dateIso": "2025-09-14T17:30:00.000Z",
           "homeTeam": "Osasuna",
           "awayTeam": "Vallecano",
           "played": true,
@@ -26235,7 +26235,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-14T19:00:00.000Z",
+          "dateIso": "2025-09-14T20:00:00.000Z",
           "homeTeam": "Barcelona",
           "awayTeam": "Valencia",
           "played": true,
@@ -26326,7 +26326,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "15/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-15T19:00:00.000Z",
+          "dateIso": "2025-09-15T20:00:00.000Z",
           "homeTeam": "Espanol",
           "awayTeam": "Mallorca",
           "played": true,
@@ -26417,7 +26417,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-19T19:00:00.000Z",
+          "dateIso": "2025-09-19T20:00:00.000Z",
           "homeTeam": "Betis",
           "awayTeam": "Sociedad",
           "played": true,
@@ -26508,7 +26508,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "13:00",
-          "dateIso": "2025-09-20T12:00:00.000Z",
+          "dateIso": "2025-09-20T13:00:00.000Z",
           "homeTeam": "Girona",
           "awayTeam": "Levante",
           "played": true,
@@ -26599,7 +26599,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "15:15",
-          "dateIso": "2025-09-20T14:15:00.000Z",
+          "dateIso": "2025-09-20T15:15:00.000Z",
           "homeTeam": "Real Madrid",
           "awayTeam": "Espanol",
           "played": true,
@@ -26690,7 +26690,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-20T16:30:00.000Z",
+          "dateIso": "2025-09-20T17:30:00.000Z",
           "homeTeam": "Alaves",
           "awayTeam": "Sevilla",
           "played": true,
@@ -26781,7 +26781,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-20T16:30:00.000Z",
+          "dateIso": "2025-09-20T17:30:00.000Z",
           "homeTeam": "Villarreal",
           "awayTeam": "Osasuna",
           "played": true,
@@ -26872,7 +26872,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-20T19:00:00.000Z",
+          "dateIso": "2025-09-20T20:00:00.000Z",
           "homeTeam": "Valencia",
           "awayTeam": "Ath Bilbao",
           "played": true,
@@ -26963,7 +26963,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "13:00",
-          "dateIso": "2025-09-21T12:00:00.000Z",
+          "dateIso": "2025-09-21T13:00:00.000Z",
           "homeTeam": "Vallecano",
           "awayTeam": "Celta",
           "played": true,
@@ -27054,7 +27054,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "15:15",
-          "dateIso": "2025-09-21T14:15:00.000Z",
+          "dateIso": "2025-09-21T15:15:00.000Z",
           "homeTeam": "Mallorca",
           "awayTeam": "Ath Madrid",
           "played": true,
@@ -27145,7 +27145,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-21T16:30:00.000Z",
+          "dateIso": "2025-09-21T17:30:00.000Z",
           "homeTeam": "Elche",
           "awayTeam": "Oviedo",
           "played": true,
@@ -27236,7 +27236,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-21T19:00:00.000Z",
+          "dateIso": "2025-09-21T20:00:00.000Z",
           "homeTeam": "Barcelona",
           "awayTeam": "Getafe",
           "played": true,
@@ -27327,7 +27327,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-23T17:00:00.000Z",
+          "dateIso": "2025-09-23T18:00:00.000Z",
           "homeTeam": "Ath Bilbao",
           "awayTeam": "Girona",
           "played": true,
@@ -27418,7 +27418,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-23T17:00:00.000Z",
+          "dateIso": "2025-09-23T18:00:00.000Z",
           "homeTeam": "Espanol",
           "awayTeam": "Valencia",
           "played": true,
@@ -27509,7 +27509,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-23T19:30:00.000Z",
+          "dateIso": "2025-09-23T20:30:00.000Z",
           "homeTeam": "Levante",
           "awayTeam": "Real Madrid",
           "played": true,
@@ -27600,7 +27600,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-23T19:30:00.000Z",
+          "dateIso": "2025-09-23T20:30:00.000Z",
           "homeTeam": "Sevilla",
           "awayTeam": "Villarreal",
           "played": true,
@@ -27691,7 +27691,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/09/2025",
           "time": "18:00",
-          "dateIso": "2025-09-24T17:00:00.000Z",
+          "dateIso": "2025-09-24T18:00:00.000Z",
           "homeTeam": "Getafe",
           "awayTeam": "Alaves",
           "played": true,
@@ -27782,7 +27782,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-24T19:30:00.000Z",
+          "dateIso": "2025-09-24T20:30:00.000Z",
           "homeTeam": "Ath Madrid",
           "awayTeam": "Vallecano",
           "played": true,
@@ -27873,7 +27873,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-24T19:30:00.000Z",
+          "dateIso": "2025-09-24T20:30:00.000Z",
           "homeTeam": "Sociedad",
           "awayTeam": "Mallorca",
           "played": true,
@@ -27964,7 +27964,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/09/2025",
           "time": "18:30",
-          "dateIso": "2025-09-25T17:30:00.000Z",
+          "dateIso": "2025-09-25T18:30:00.000Z",
           "homeTeam": "Osasuna",
           "awayTeam": "Elche",
           "played": true,
@@ -28055,7 +28055,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/09/2025",
           "time": "20:30",
-          "dateIso": "2025-09-25T19:30:00.000Z",
+          "dateIso": "2025-09-25T20:30:00.000Z",
           "homeTeam": "Oviedo",
           "awayTeam": "Barcelona",
           "played": true,
@@ -28146,7 +28146,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "26/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-26T19:00:00.000Z",
+          "dateIso": "2025-09-26T20:00:00.000Z",
           "homeTeam": "Girona",
           "awayTeam": "Espanol",
           "played": true,
@@ -28237,7 +28237,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "13:00",
-          "dateIso": "2025-09-27T12:00:00.000Z",
+          "dateIso": "2025-09-27T13:00:00.000Z",
           "homeTeam": "Getafe",
           "awayTeam": "Levante",
           "played": true,
@@ -28328,7 +28328,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "15:15",
-          "dateIso": "2025-09-27T14:15:00.000Z",
+          "dateIso": "2025-09-27T15:15:00.000Z",
           "homeTeam": "Ath Madrid",
           "awayTeam": "Real Madrid",
           "played": true,
@@ -28419,7 +28419,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-27T16:30:00.000Z",
+          "dateIso": "2025-09-27T17:30:00.000Z",
           "homeTeam": "Mallorca",
           "awayTeam": "Alaves",
           "played": true,
@@ -28510,7 +28510,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-27T19:00:00.000Z",
+          "dateIso": "2025-09-27T20:00:00.000Z",
           "homeTeam": "Villarreal",
           "awayTeam": "Ath Bilbao",
           "played": true,
@@ -28601,7 +28601,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "13:00",
-          "dateIso": "2025-09-28T12:00:00.000Z",
+          "dateIso": "2025-09-28T13:00:00.000Z",
           "homeTeam": "Vallecano",
           "awayTeam": "Sevilla",
           "played": true,
@@ -28692,7 +28692,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "15:15",
-          "dateIso": "2025-09-28T14:15:00.000Z",
+          "dateIso": "2025-09-28T15:15:00.000Z",
           "homeTeam": "Elche",
           "awayTeam": "Celta",
           "played": true,
@@ -28783,7 +28783,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-28T16:30:00.000Z",
+          "dateIso": "2025-09-28T17:30:00.000Z",
           "homeTeam": "Barcelona",
           "awayTeam": "Sociedad",
           "played": true,
@@ -28874,7 +28874,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-28T19:00:00.000Z",
+          "dateIso": "2025-09-28T20:00:00.000Z",
           "homeTeam": "Betis",
           "awayTeam": "Osasuna",
           "played": true,
@@ -28965,7 +28965,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/09/2025",
           "time": "19:00",
-          "dateIso": "2025-09-30T18:00:00.000Z",
+          "dateIso": "2025-09-30T19:00:00.000Z",
           "homeTeam": "Valencia",
           "awayTeam": "Oviedo",
           "played": true,
@@ -29056,7 +29056,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "03/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-03T19:00:00.000Z",
+          "dateIso": "2025-10-03T20:00:00.000Z",
           "homeTeam": "Osasuna",
           "awayTeam": "Getafe",
           "played": true,
@@ -29147,7 +29147,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "13:00",
-          "dateIso": "2025-10-04T12:00:00.000Z",
+          "dateIso": "2025-10-04T13:00:00.000Z",
           "homeTeam": "Oviedo",
           "awayTeam": "Levante",
           "played": true,
@@ -29238,7 +29238,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "15:15",
-          "dateIso": "2025-10-04T14:15:00.000Z",
+          "dateIso": "2025-10-04T15:15:00.000Z",
           "homeTeam": "Girona",
           "awayTeam": "Valencia",
           "played": true,
@@ -29329,7 +29329,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-04T16:30:00.000Z",
+          "dateIso": "2025-10-04T17:30:00.000Z",
           "homeTeam": "Ath Bilbao",
           "awayTeam": "Mallorca",
           "played": true,
@@ -29420,7 +29420,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-04T19:00:00.000Z",
+          "dateIso": "2025-10-04T20:00:00.000Z",
           "homeTeam": "Real Madrid",
           "awayTeam": "Villarreal",
           "played": true,
@@ -29511,7 +29511,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "13:00",
-          "dateIso": "2025-10-05T12:00:00.000Z",
+          "dateIso": "2025-10-05T13:00:00.000Z",
           "homeTeam": "Alaves",
           "awayTeam": "Elche",
           "played": true,
@@ -29602,7 +29602,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "15:15",
-          "dateIso": "2025-10-05T14:15:00.000Z",
+          "dateIso": "2025-10-05T15:15:00.000Z",
           "homeTeam": "Sevilla",
           "awayTeam": "Barcelona",
           "played": true,
@@ -29693,7 +29693,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-05T16:30:00.000Z",
+          "dateIso": "2025-10-05T17:30:00.000Z",
           "homeTeam": "Espanol",
           "awayTeam": "Betis",
           "played": true,
@@ -29784,7 +29784,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-05T16:30:00.000Z",
+          "dateIso": "2025-10-05T17:30:00.000Z",
           "homeTeam": "Sociedad",
           "awayTeam": "Vallecano",
           "played": true,
@@ -29875,7 +29875,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-05T19:00:00.000Z",
+          "dateIso": "2025-10-05T20:00:00.000Z",
           "homeTeam": "Celta",
           "awayTeam": "Ath Madrid",
           "played": true,
@@ -29966,7 +29966,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-17T19:00:00.000Z",
+          "dateIso": "2025-10-17T20:00:00.000Z",
           "homeTeam": "Oviedo",
           "awayTeam": "Espanol",
           "played": true,
@@ -30057,7 +30057,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "13:00",
-          "dateIso": "2025-10-18T12:00:00.000Z",
+          "dateIso": "2025-10-18T13:00:00.000Z",
           "homeTeam": "Sevilla",
           "awayTeam": "Mallorca",
           "played": true,
@@ -30148,7 +30148,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "15:15",
-          "dateIso": "2025-10-18T14:15:00.000Z",
+          "dateIso": "2025-10-18T15:15:00.000Z",
           "homeTeam": "Barcelona",
           "awayTeam": "Girona",
           "played": true,
@@ -30239,7 +30239,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-18T16:30:00.000Z",
+          "dateIso": "2025-10-18T17:30:00.000Z",
           "homeTeam": "Villarreal",
           "awayTeam": "Betis",
           "played": true,
@@ -30330,7 +30330,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-18T19:00:00.000Z",
+          "dateIso": "2025-10-18T20:00:00.000Z",
           "homeTeam": "Ath Madrid",
           "awayTeam": "Osasuna",
           "played": true,
@@ -30421,7 +30421,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/10/2025",
           "time": "13:00",
-          "dateIso": "2025-10-19T12:00:00.000Z",
+          "dateIso": "2025-10-19T13:00:00.000Z",
           "homeTeam": "Elche",
           "awayTeam": "Ath Bilbao",
           "played": true,
@@ -30512,7 +30512,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/10/2025",
           "time": "15:15",
-          "dateIso": "2025-10-19T14:15:00.000Z",
+          "dateIso": "2025-10-19T15:15:00.000Z",
           "homeTeam": "Celta",
           "awayTeam": "Sociedad",
           "played": true,
@@ -30603,7 +30603,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-19T16:30:00.000Z",
+          "dateIso": "2025-10-19T17:30:00.000Z",
           "homeTeam": "Levante",
           "awayTeam": "Vallecano",
           "played": true,
@@ -30694,7 +30694,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-19T19:00:00.000Z",
+          "dateIso": "2025-10-19T20:00:00.000Z",
           "homeTeam": "Getafe",
           "awayTeam": "Real Madrid",
           "played": true,
@@ -30785,7 +30785,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-20T19:00:00.000Z",
+          "dateIso": "2025-10-20T20:00:00.000Z",
           "homeTeam": "Alaves",
           "awayTeam": "Valencia",
           "played": true,
@@ -30876,7 +30876,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-24T19:00:00.000Z",
+          "dateIso": "2025-10-24T20:00:00.000Z",
           "homeTeam": "Sociedad",
           "awayTeam": "Sevilla",
           "played": true,
@@ -30967,7 +30967,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "13:00",
-          "dateIso": "2025-10-25T12:00:00.000Z",
+          "dateIso": "2025-10-25T13:00:00.000Z",
           "homeTeam": "Girona",
           "awayTeam": "Oviedo",
           "played": true,
@@ -31058,7 +31058,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "15:15",
-          "dateIso": "2025-10-25T14:15:00.000Z",
+          "dateIso": "2025-10-25T15:15:00.000Z",
           "homeTeam": "Espanol",
           "awayTeam": "Elche",
           "played": true,
@@ -31149,7 +31149,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-25T16:30:00.000Z",
+          "dateIso": "2025-10-25T17:30:00.000Z",
           "homeTeam": "Ath Bilbao",
           "awayTeam": "Getafe",
           "played": true,
@@ -31240,7 +31240,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-25T19:00:00.000Z",
+          "dateIso": "2025-10-25T20:00:00.000Z",
           "homeTeam": "Valencia",
           "awayTeam": "Villarreal",
           "played": true,
@@ -49622,7 +49622,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "15/08/2025",
           "time": "20:00",
-          "dateIso": "2025-08-15T19:00:00.000Z",
+          "dateIso": "2025-08-15T20:00:00.000Z",
           "homeTeam": "Liverpool",
           "awayTeam": "Bournemouth",
           "played": true,
@@ -49713,7 +49713,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "12:30",
-          "dateIso": "2025-08-16T11:30:00.000Z",
+          "dateIso": "2025-08-16T12:30:00.000Z",
           "homeTeam": "Aston Villa",
           "awayTeam": "Newcastle",
           "played": true,
@@ -49804,7 +49804,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-16T14:00:00.000Z",
+          "dateIso": "2025-08-16T15:00:00.000Z",
           "homeTeam": "Brighton",
           "awayTeam": "Fulham",
           "played": true,
@@ -49895,7 +49895,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-16T14:00:00.000Z",
+          "dateIso": "2025-08-16T15:00:00.000Z",
           "homeTeam": "Sunderland",
           "awayTeam": "West Ham",
           "played": true,
@@ -49986,7 +49986,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-16T14:00:00.000Z",
+          "dateIso": "2025-08-16T15:00:00.000Z",
           "homeTeam": "Tottenham",
           "awayTeam": "Burnley",
           "played": true,
@@ -50077,7 +50077,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "16/08/2025",
           "time": "17:30",
-          "dateIso": "2025-08-16T16:30:00.000Z",
+          "dateIso": "2025-08-16T17:30:00.000Z",
           "homeTeam": "Wolves",
           "awayTeam": "Man City",
           "played": true,
@@ -50168,7 +50168,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "14:00",
-          "dateIso": "2025-08-17T13:00:00.000Z",
+          "dateIso": "2025-08-17T14:00:00.000Z",
           "homeTeam": "Chelsea",
           "awayTeam": "Crystal Palace",
           "played": true,
@@ -50259,7 +50259,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "14:00",
-          "dateIso": "2025-08-17T13:00:00.000Z",
+          "dateIso": "2025-08-17T14:00:00.000Z",
           "homeTeam": "Nott'm Forest",
           "awayTeam": "Brentford",
           "played": true,
@@ -50350,7 +50350,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "17/08/2025",
           "time": "16:30",
-          "dateIso": "2025-08-17T15:30:00.000Z",
+          "dateIso": "2025-08-17T16:30:00.000Z",
           "homeTeam": "Man United",
           "awayTeam": "Arsenal",
           "played": true,
@@ -50441,7 +50441,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/08/2025",
           "time": "20:00",
-          "dateIso": "2025-08-18T19:00:00.000Z",
+          "dateIso": "2025-08-18T20:00:00.000Z",
           "homeTeam": "Leeds",
           "awayTeam": "Everton",
           "played": true,
@@ -50532,7 +50532,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "22/08/2025",
           "time": "20:00",
-          "dateIso": "2025-08-22T19:00:00.000Z",
+          "dateIso": "2025-08-22T20:00:00.000Z",
           "homeTeam": "West Ham",
           "awayTeam": "Chelsea",
           "played": true,
@@ -50623,7 +50623,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "12:30",
-          "dateIso": "2025-08-23T11:30:00.000Z",
+          "dateIso": "2025-08-23T12:30:00.000Z",
           "homeTeam": "Man City",
           "awayTeam": "Tottenham",
           "played": true,
@@ -50714,7 +50714,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-23T14:00:00.000Z",
+          "dateIso": "2025-08-23T15:00:00.000Z",
           "homeTeam": "Bournemouth",
           "awayTeam": "Wolves",
           "played": true,
@@ -50805,7 +50805,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-23T14:00:00.000Z",
+          "dateIso": "2025-08-23T15:00:00.000Z",
           "homeTeam": "Brentford",
           "awayTeam": "Aston Villa",
           "played": true,
@@ -50896,7 +50896,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-23T14:00:00.000Z",
+          "dateIso": "2025-08-23T15:00:00.000Z",
           "homeTeam": "Burnley",
           "awayTeam": "Sunderland",
           "played": true,
@@ -50987,7 +50987,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "23/08/2025",
           "time": "17:30",
-          "dateIso": "2025-08-23T16:30:00.000Z",
+          "dateIso": "2025-08-23T17:30:00.000Z",
           "homeTeam": "Arsenal",
           "awayTeam": "Leeds",
           "played": true,
@@ -51078,7 +51078,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "14:00",
-          "dateIso": "2025-08-24T13:00:00.000Z",
+          "dateIso": "2025-08-24T14:00:00.000Z",
           "homeTeam": "Crystal Palace",
           "awayTeam": "Nott'm Forest",
           "played": true,
@@ -51169,7 +51169,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "14:00",
-          "dateIso": "2025-08-24T13:00:00.000Z",
+          "dateIso": "2025-08-24T14:00:00.000Z",
           "homeTeam": "Everton",
           "awayTeam": "Brighton",
           "played": true,
@@ -51260,7 +51260,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/08/2025",
           "time": "16:30",
-          "dateIso": "2025-08-24T15:30:00.000Z",
+          "dateIso": "2025-08-24T16:30:00.000Z",
           "homeTeam": "Fulham",
           "awayTeam": "Man United",
           "played": true,
@@ -51351,7 +51351,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/08/2025",
           "time": "20:00",
-          "dateIso": "2025-08-25T19:00:00.000Z",
+          "dateIso": "2025-08-25T20:00:00.000Z",
           "homeTeam": "Newcastle",
           "awayTeam": "Liverpool",
           "played": true,
@@ -51442,7 +51442,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "12:30",
-          "dateIso": "2025-08-30T11:30:00.000Z",
+          "dateIso": "2025-08-30T12:30:00.000Z",
           "homeTeam": "Chelsea",
           "awayTeam": "Fulham",
           "played": true,
@@ -51533,7 +51533,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-30T14:00:00.000Z",
+          "dateIso": "2025-08-30T15:00:00.000Z",
           "homeTeam": "Man United",
           "awayTeam": "Burnley",
           "played": true,
@@ -51624,7 +51624,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-30T14:00:00.000Z",
+          "dateIso": "2025-08-30T15:00:00.000Z",
           "homeTeam": "Sunderland",
           "awayTeam": "Brentford",
           "played": true,
@@ -51715,7 +51715,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-30T14:00:00.000Z",
+          "dateIso": "2025-08-30T15:00:00.000Z",
           "homeTeam": "Tottenham",
           "awayTeam": "Bournemouth",
           "played": true,
@@ -51806,7 +51806,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "15:00",
-          "dateIso": "2025-08-30T14:00:00.000Z",
+          "dateIso": "2025-08-30T15:00:00.000Z",
           "homeTeam": "Wolves",
           "awayTeam": "Everton",
           "played": true,
@@ -51897,7 +51897,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "30/08/2025",
           "time": "17:30",
-          "dateIso": "2025-08-30T16:30:00.000Z",
+          "dateIso": "2025-08-30T17:30:00.000Z",
           "homeTeam": "Leeds",
           "awayTeam": "Newcastle",
           "played": true,
@@ -51988,7 +51988,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "14:00",
-          "dateIso": "2025-08-31T13:00:00.000Z",
+          "dateIso": "2025-08-31T14:00:00.000Z",
           "homeTeam": "Brighton",
           "awayTeam": "Man City",
           "played": true,
@@ -52079,7 +52079,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "14:00",
-          "dateIso": "2025-08-31T13:00:00.000Z",
+          "dateIso": "2025-08-31T14:00:00.000Z",
           "homeTeam": "Nott'm Forest",
           "awayTeam": "West Ham",
           "played": true,
@@ -52170,7 +52170,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "16:30",
-          "dateIso": "2025-08-31T15:30:00.000Z",
+          "dateIso": "2025-08-31T16:30:00.000Z",
           "homeTeam": "Liverpool",
           "awayTeam": "Arsenal",
           "played": true,
@@ -52261,7 +52261,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "31/08/2025",
           "time": "19:00",
-          "dateIso": "2025-08-31T18:00:00.000Z",
+          "dateIso": "2025-08-31T19:00:00.000Z",
           "homeTeam": "Aston Villa",
           "awayTeam": "Crystal Palace",
           "played": true,
@@ -52352,7 +52352,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "12:30",
-          "dateIso": "2025-09-13T11:30:00.000Z",
+          "dateIso": "2025-09-13T12:30:00.000Z",
           "homeTeam": "Arsenal",
           "awayTeam": "Nott'm Forest",
           "played": true,
@@ -52443,7 +52443,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-13T14:00:00.000Z",
+          "dateIso": "2025-09-13T15:00:00.000Z",
           "homeTeam": "Bournemouth",
           "awayTeam": "Brighton",
           "played": true,
@@ -52534,7 +52534,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-13T14:00:00.000Z",
+          "dateIso": "2025-09-13T15:00:00.000Z",
           "homeTeam": "Crystal Palace",
           "awayTeam": "Sunderland",
           "played": true,
@@ -52625,7 +52625,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-13T14:00:00.000Z",
+          "dateIso": "2025-09-13T15:00:00.000Z",
           "homeTeam": "Everton",
           "awayTeam": "Aston Villa",
           "played": true,
@@ -52716,7 +52716,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-13T14:00:00.000Z",
+          "dateIso": "2025-09-13T15:00:00.000Z",
           "homeTeam": "Fulham",
           "awayTeam": "Leeds",
           "played": true,
@@ -52807,7 +52807,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-13T14:00:00.000Z",
+          "dateIso": "2025-09-13T15:00:00.000Z",
           "homeTeam": "Newcastle",
           "awayTeam": "Wolves",
           "played": true,
@@ -52898,7 +52898,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-13T16:30:00.000Z",
+          "dateIso": "2025-09-13T17:30:00.000Z",
           "homeTeam": "West Ham",
           "awayTeam": "Tottenham",
           "played": true,
@@ -52989,7 +52989,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "13/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-13T19:00:00.000Z",
+          "dateIso": "2025-09-13T20:00:00.000Z",
           "homeTeam": "Brentford",
           "awayTeam": "Chelsea",
           "played": true,
@@ -53080,7 +53080,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "14:00",
-          "dateIso": "2025-09-14T13:00:00.000Z",
+          "dateIso": "2025-09-14T14:00:00.000Z",
           "homeTeam": "Burnley",
           "awayTeam": "Liverpool",
           "played": true,
@@ -53171,7 +53171,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "14/09/2025",
           "time": "16:30",
-          "dateIso": "2025-09-14T15:30:00.000Z",
+          "dateIso": "2025-09-14T16:30:00.000Z",
           "homeTeam": "Man City",
           "awayTeam": "Man United",
           "played": true,
@@ -53262,7 +53262,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "12:30",
-          "dateIso": "2025-09-20T11:30:00.000Z",
+          "dateIso": "2025-09-20T12:30:00.000Z",
           "homeTeam": "Liverpool",
           "awayTeam": "Everton",
           "played": true,
@@ -53353,7 +53353,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-20T14:00:00.000Z",
+          "dateIso": "2025-09-20T15:00:00.000Z",
           "homeTeam": "Brighton",
           "awayTeam": "Tottenham",
           "played": true,
@@ -53444,7 +53444,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-20T14:00:00.000Z",
+          "dateIso": "2025-09-20T15:00:00.000Z",
           "homeTeam": "Burnley",
           "awayTeam": "Nott'm Forest",
           "played": true,
@@ -53535,7 +53535,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-20T14:00:00.000Z",
+          "dateIso": "2025-09-20T15:00:00.000Z",
           "homeTeam": "West Ham",
           "awayTeam": "Crystal Palace",
           "played": true,
@@ -53626,7 +53626,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-20T14:00:00.000Z",
+          "dateIso": "2025-09-20T15:00:00.000Z",
           "homeTeam": "Wolves",
           "awayTeam": "Leeds",
           "played": true,
@@ -53717,7 +53717,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-20T16:30:00.000Z",
+          "dateIso": "2025-09-20T17:30:00.000Z",
           "homeTeam": "Man United",
           "awayTeam": "Chelsea",
           "played": true,
@@ -53808,7 +53808,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-20T19:00:00.000Z",
+          "dateIso": "2025-09-20T20:00:00.000Z",
           "homeTeam": "Fulham",
           "awayTeam": "Brentford",
           "played": true,
@@ -53899,7 +53899,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "14:00",
-          "dateIso": "2025-09-21T13:00:00.000Z",
+          "dateIso": "2025-09-21T14:00:00.000Z",
           "homeTeam": "Bournemouth",
           "awayTeam": "Newcastle",
           "played": true,
@@ -53990,7 +53990,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "14:00",
-          "dateIso": "2025-09-21T13:00:00.000Z",
+          "dateIso": "2025-09-21T14:00:00.000Z",
           "homeTeam": "Sunderland",
           "awayTeam": "Aston Villa",
           "played": true,
@@ -54081,7 +54081,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "21/09/2025",
           "time": "16:30",
-          "dateIso": "2025-09-21T15:30:00.000Z",
+          "dateIso": "2025-09-21T16:30:00.000Z",
           "homeTeam": "Arsenal",
           "awayTeam": "Man City",
           "played": true,
@@ -54172,7 +54172,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "12:30",
-          "dateIso": "2025-09-27T11:30:00.000Z",
+          "dateIso": "2025-09-27T12:30:00.000Z",
           "homeTeam": "Brentford",
           "awayTeam": "Man United",
           "played": true,
@@ -54263,7 +54263,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-27T14:00:00.000Z",
+          "dateIso": "2025-09-27T15:00:00.000Z",
           "homeTeam": "Chelsea",
           "awayTeam": "Brighton",
           "played": true,
@@ -54354,7 +54354,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-27T14:00:00.000Z",
+          "dateIso": "2025-09-27T15:00:00.000Z",
           "homeTeam": "Crystal Palace",
           "awayTeam": "Liverpool",
           "played": true,
@@ -54445,7 +54445,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-27T14:00:00.000Z",
+          "dateIso": "2025-09-27T15:00:00.000Z",
           "homeTeam": "Leeds",
           "awayTeam": "Bournemouth",
           "played": true,
@@ -54536,7 +54536,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "15:00",
-          "dateIso": "2025-09-27T14:00:00.000Z",
+          "dateIso": "2025-09-27T15:00:00.000Z",
           "homeTeam": "Man City",
           "awayTeam": "Burnley",
           "played": true,
@@ -54627,7 +54627,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "17:30",
-          "dateIso": "2025-09-27T16:30:00.000Z",
+          "dateIso": "2025-09-27T17:30:00.000Z",
           "homeTeam": "Nott'm Forest",
           "awayTeam": "Sunderland",
           "played": true,
@@ -54718,7 +54718,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "27/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-27T19:00:00.000Z",
+          "dateIso": "2025-09-27T20:00:00.000Z",
           "homeTeam": "Tottenham",
           "awayTeam": "Wolves",
           "played": true,
@@ -54809,7 +54809,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "14:00",
-          "dateIso": "2025-09-28T13:00:00.000Z",
+          "dateIso": "2025-09-28T14:00:00.000Z",
           "homeTeam": "Aston Villa",
           "awayTeam": "Fulham",
           "played": true,
@@ -54900,7 +54900,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "28/09/2025",
           "time": "16:30",
-          "dateIso": "2025-09-28T15:30:00.000Z",
+          "dateIso": "2025-09-28T16:30:00.000Z",
           "homeTeam": "Newcastle",
           "awayTeam": "Arsenal",
           "played": true,
@@ -54991,7 +54991,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "29/09/2025",
           "time": "20:00",
-          "dateIso": "2025-09-29T19:00:00.000Z",
+          "dateIso": "2025-09-29T20:00:00.000Z",
           "homeTeam": "Everton",
           "awayTeam": "West Ham",
           "played": true,
@@ -55082,7 +55082,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "03/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-03T19:00:00.000Z",
+          "dateIso": "2025-10-03T20:00:00.000Z",
           "homeTeam": "Bournemouth",
           "awayTeam": "Fulham",
           "played": true,
@@ -55173,7 +55173,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "12:30",
-          "dateIso": "2025-10-04T11:30:00.000Z",
+          "dateIso": "2025-10-04T12:30:00.000Z",
           "homeTeam": "Leeds",
           "awayTeam": "Tottenham",
           "played": true,
@@ -55264,7 +55264,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-04T14:00:00.000Z",
+          "dateIso": "2025-10-04T15:00:00.000Z",
           "homeTeam": "Arsenal",
           "awayTeam": "West Ham",
           "played": true,
@@ -55355,7 +55355,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-04T14:00:00.000Z",
+          "dateIso": "2025-10-04T15:00:00.000Z",
           "homeTeam": "Man United",
           "awayTeam": "Sunderland",
           "played": true,
@@ -55446,7 +55446,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "04/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-04T16:30:00.000Z",
+          "dateIso": "2025-10-04T17:30:00.000Z",
           "homeTeam": "Chelsea",
           "awayTeam": "Liverpool",
           "played": true,
@@ -55537,7 +55537,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "14:00",
-          "dateIso": "2025-10-05T13:00:00.000Z",
+          "dateIso": "2025-10-05T14:00:00.000Z",
           "homeTeam": "Aston Villa",
           "awayTeam": "Burnley",
           "played": true,
@@ -55628,7 +55628,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "14:00",
-          "dateIso": "2025-10-05T13:00:00.000Z",
+          "dateIso": "2025-10-05T14:00:00.000Z",
           "homeTeam": "Everton",
           "awayTeam": "Crystal Palace",
           "played": true,
@@ -55719,7 +55719,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "14:00",
-          "dateIso": "2025-10-05T13:00:00.000Z",
+          "dateIso": "2025-10-05T14:00:00.000Z",
           "homeTeam": "Newcastle",
           "awayTeam": "Nott'm Forest",
           "played": true,
@@ -55810,7 +55810,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "14:00",
-          "dateIso": "2025-10-05T13:00:00.000Z",
+          "dateIso": "2025-10-05T14:00:00.000Z",
           "homeTeam": "Wolves",
           "awayTeam": "Brighton",
           "played": true,
@@ -55901,7 +55901,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "05/10/2025",
           "time": "16:30",
-          "dateIso": "2025-10-05T15:30:00.000Z",
+          "dateIso": "2025-10-05T16:30:00.000Z",
           "homeTeam": "Brentford",
           "awayTeam": "Man City",
           "played": true,
@@ -55992,7 +55992,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "12:30",
-          "dateIso": "2025-10-18T11:30:00.000Z",
+          "dateIso": "2025-10-18T12:30:00.000Z",
           "homeTeam": "Nott'm Forest",
           "awayTeam": "Chelsea",
           "played": true,
@@ -56083,7 +56083,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-18T14:00:00.000Z",
+          "dateIso": "2025-10-18T15:00:00.000Z",
           "homeTeam": "Brighton",
           "awayTeam": "Newcastle",
           "played": true,
@@ -56174,7 +56174,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-18T14:00:00.000Z",
+          "dateIso": "2025-10-18T15:00:00.000Z",
           "homeTeam": "Burnley",
           "awayTeam": "Leeds",
           "played": true,
@@ -56265,7 +56265,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-18T14:00:00.000Z",
+          "dateIso": "2025-10-18T15:00:00.000Z",
           "homeTeam": "Crystal Palace",
           "awayTeam": "Bournemouth",
           "played": true,
@@ -56356,7 +56356,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-18T14:00:00.000Z",
+          "dateIso": "2025-10-18T15:00:00.000Z",
           "homeTeam": "Man City",
           "awayTeam": "Everton",
           "played": true,
@@ -56447,7 +56447,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-18T14:00:00.000Z",
+          "dateIso": "2025-10-18T15:00:00.000Z",
           "homeTeam": "Sunderland",
           "awayTeam": "Wolves",
           "played": true,
@@ -56538,7 +56538,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "18/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-18T16:30:00.000Z",
+          "dateIso": "2025-10-18T17:30:00.000Z",
           "homeTeam": "Fulham",
           "awayTeam": "Arsenal",
           "played": true,
@@ -56629,7 +56629,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/10/2025",
           "time": "14:00",
-          "dateIso": "2025-10-19T13:00:00.000Z",
+          "dateIso": "2025-10-19T14:00:00.000Z",
           "homeTeam": "Tottenham",
           "awayTeam": "Aston Villa",
           "played": true,
@@ -56720,7 +56720,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "19/10/2025",
           "time": "16:30",
-          "dateIso": "2025-10-19T15:30:00.000Z",
+          "dateIso": "2025-10-19T16:30:00.000Z",
           "homeTeam": "Liverpool",
           "awayTeam": "Man United",
           "played": true,
@@ -56811,7 +56811,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "20/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-20T19:00:00.000Z",
+          "dateIso": "2025-10-20T20:00:00.000Z",
           "homeTeam": "West Ham",
           "awayTeam": "Brentford",
           "played": true,
@@ -56902,7 +56902,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "24/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-24T19:00:00.000Z",
+          "dateIso": "2025-10-24T20:00:00.000Z",
           "homeTeam": "Leeds",
           "awayTeam": "West Ham",
           "played": true,
@@ -56993,7 +56993,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-25T14:00:00.000Z",
+          "dateIso": "2025-10-25T15:00:00.000Z",
           "homeTeam": "Chelsea",
           "awayTeam": "Sunderland",
           "played": true,
@@ -57084,7 +57084,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "15:00",
-          "dateIso": "2025-10-25T14:00:00.000Z",
+          "dateIso": "2025-10-25T15:00:00.000Z",
           "homeTeam": "Newcastle",
           "awayTeam": "Fulham",
           "played": true,
@@ -57175,7 +57175,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "17:30",
-          "dateIso": "2025-10-25T16:30:00.000Z",
+          "dateIso": "2025-10-25T17:30:00.000Z",
           "homeTeam": "Man United",
           "awayTeam": "Brighton",
           "played": true,
@@ -57266,7 +57266,7 @@ window.DATA_SNAPSHOT = {
         {
           "date": "25/10/2025",
           "time": "20:00",
-          "dateIso": "2025-10-25T19:00:00.000Z",
+          "dateIso": "2025-10-25T20:00:00.000Z",
           "homeTeam": "Brentford",
           "awayTeam": "Liverpool",
           "played": true,
