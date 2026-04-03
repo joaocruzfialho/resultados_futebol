@@ -293,10 +293,16 @@
       .join("");
   }
 
+  function saveSelection() {
+    localStorage.setItem("selectedLeague", elements.leagueSelect.value);
+    localStorage.setItem("selectedHome", elements.homeTeamSelect.value);
+    localStorage.setItem("selectedAway", elements.awayTeamSelect.value);
+  }
+
   function populateTeamOptions() {
     const league = getCurrentLeague();
-    const previousHome = elements.homeTeamSelect.value;
-    const previousAway = elements.awayTeamSelect.value;
+    const previousHome = elements.homeTeamSelect.value || localStorage.getItem("selectedHome") || "";
+    const previousAway = elements.awayTeamSelect.value || localStorage.getItem("selectedAway") || "";
     const teamNames = league.teams.map((team) => team.name);
 
     const optionsHtml = [...teamNames]
@@ -1443,11 +1449,12 @@
 
   elements.leagueSelect.addEventListener("change", () => {
     populateTeamOptions();
+    saveSelection();
     renderPrediction();
   });
 
-  elements.homeTeamSelect.addEventListener("change", renderPrediction);
-  elements.awayTeamSelect.addEventListener("change", renderPrediction);
+  elements.homeTeamSelect.addEventListener("change", () => { saveSelection(); renderPrediction(); });
+  elements.awayTeamSelect.addEventListener("change", () => { saveSelection(); renderPrediction(); });
   elements.predictButton.addEventListener("click", renderPrediction);
   elements.formWeight.addEventListener("input", () => {
     elements.formWeightValue.textContent = `${elements.formWeight.value}%`;
@@ -1458,6 +1465,7 @@
     const currentHome = elements.homeTeamSelect.value;
     elements.homeTeamSelect.value = elements.awayTeamSelect.value;
     elements.awayTeamSelect.value = currentHome;
+    saveSelection();
     renderPrediction();
   });
 
@@ -1817,6 +1825,10 @@
   }
 
   populateLeagueOptions();
+  const savedLeague = localStorage.getItem("selectedLeague");
+  if (savedLeague && leagueKeys.includes(savedLeague)) {
+    elements.leagueSelect.value = savedLeague;
+  }
   populateTeamOptions();
   refreshDataStatus();
   renderPrediction();
