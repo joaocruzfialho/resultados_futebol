@@ -1501,14 +1501,99 @@
     }
   }
 
+  // Maps The Odds API team names → snapshot team names
+  const ODDS_TEAM_ALIASES = {
+    // Portugal
+    "sporting cp": "Sp Lisbon", "sporting lisbon": "Sp Lisbon", "sporting": "Sp Lisbon",
+    "fc porto": "Porto", "porto fc": "Porto",
+    "sl benfica": "Benfica", "benfica": "Benfica",
+    "sc braga": "Sp Braga", "sporting braga": "Sp Braga", "braga": "Sp Braga",
+    "fc famalicao": "Famalicao", "famalicão": "Famalicao",
+    "vitoria guimaraes": "Guimaraes", "vitória guimarães": "Guimaraes", "vitoria sc": "Guimaraes", "guimarães": "Guimaraes",
+    "gil vicente fc": "Gil Vicente",
+    "estoril praia": "Estoril", "gd estoril praia": "Estoril",
+    "moreirense fc": "Moreirense",
+    "rio ave fc": "Rio Ave",
+    "cd santa clara": "Santa Clara", "santa clara": "Santa Clara",
+    "estrela amadora": "Estrela", "cf estrela amadora": "Estrela", "estrela da amadora": "Estrela",
+    "casa pia ac": "Casa Pia", "casa pia": "Casa Pia",
+    "cd nacional": "Nacional", "nacional": "Nacional",
+    "cd tondela": "Tondela", "tondela": "Tondela",
+    "fc alverca": "Alverca", "alverca": "Alverca",
+    "fc arouca": "Arouca", "arouca": "Arouca",
+    "avs futebol sad": "AVS", "avs": "AVS",
+    // Spain
+    "atletico madrid": "Ath Madrid", "atlético madrid": "Ath Madrid", "atlético de madrid": "Ath Madrid", "atletico de madrid": "Ath Madrid", "club atletico de madrid": "Ath Madrid",
+    "athletic bilbao": "Ath Bilbao", "athletic club": "Ath Bilbao", "athletic club bilbao": "Ath Bilbao",
+    "real betis": "Betis", "real betis balompie": "Betis",
+    "celta vigo": "Celta", "rc celta": "Celta", "celta de vigo": "Celta",
+    "real sociedad": "Sociedad",
+    "rcd espanyol": "Espanol", "espanyol": "Espanol", "rcd español": "Espanol",
+    "rayo vallecano": "Vallecano",
+    "deportivo alaves": "Alaves", "deportivo alavés": "Alaves", "alavés": "Alaves",
+    "real oviedo": "Oviedo", "oviedo": "Oviedo",
+    "ud levante": "Levante", "levante ud": "Levante",
+    "cf elche": "Elche", "elche cf": "Elche",
+    "rcd mallorca": "Mallorca",
+    "sevilla fc": "Sevilla",
+    "villarreal cf": "Villarreal",
+    "girona fc": "Girona",
+    "getafe cf": "Getafe",
+    "ca osasuna": "Osasuna", "osasuna": "Osasuna",
+    "valencia cf": "Valencia",
+    // England
+    "manchester city": "Man City", "man city": "Man City",
+    "manchester united": "Man United", "man united": "Man United", "manchester utd": "Man United", "man utd": "Man United",
+    "nottingham forest": "Nott'm Forest", "nottm forest": "Nott'm Forest",
+    "wolverhampton wanderers": "Wolves", "wolverhampton": "Wolves",
+    "newcastle united": "Newcastle", "newcastle utd": "Newcastle",
+    "aston villa": "Aston Villa",
+    "crystal palace": "Crystal Palace",
+    "west ham united": "West Ham", "west ham utd": "West Ham",
+    "tottenham hotspur": "Tottenham", "tottenham": "Tottenham", "spurs": "Tottenham",
+    "leeds united": "Leeds", "leeds utd": "Leeds",
+    "brighton and hove albion": "Brighton", "brighton hove albion": "Brighton",
+    "afc bournemouth": "Bournemouth",
+    "burnley fc": "Burnley",
+    "sunderland afc": "Sunderland",
+    "brentford fc": "Brentford",
+    "everton fc": "Everton",
+    "fulham fc": "Fulham",
+    "arsenal fc": "Arsenal",
+    "chelsea fc": "Chelsea",
+    "liverpool fc": "Liverpool"
+  };
+
   function normalizeForMatch(name) {
     return String(name || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
   }
 
+  function resolveTeamName(apiName, leagueTeams) {
+    // 1. Try alias map (case-insensitive)
+    const lower = String(apiName || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+    if (ODDS_TEAM_ALIASES[lower]) return ODDS_TEAM_ALIASES[lower];
+
+    // 2. Try normalized match against snapshot teams
+    const n = normalizeForMatch(apiName);
+    const exact = leagueTeams.find(t => normalizeForMatch(t.name) === n);
+    if (exact) return exact.name;
+
+    // 3. Try partial match
+    const partial = leagueTeams.find(t => {
+      const tn = normalizeForMatch(t.name);
+      return (tn.includes(n) || n.includes(tn)) && Math.min(tn.length, n.length) >= 4;
+    });
+    if (partial) return partial.name;
+
+    return apiName;
+  }
+
   function findFixtureForOddsEvent(league, homeTeam, awayTeam) {
     const fixtures = Array.isArray(league.fixtures) ? league.fixtures : [];
-    const hn = normalizeForMatch(homeTeam);
-    const an = normalizeForMatch(awayTeam);
+    const resolvedHome = resolveTeamName(homeTeam, league.teams || []);
+    const resolvedAway = resolveTeamName(awayTeam, league.teams || []);
+    const hn = normalizeForMatch(resolvedHome);
+    const an = normalizeForMatch(resolvedAway);
     return fixtures.find(f => {
       const fh = normalizeForMatch(f.homeTeam);
       const fa = normalizeForMatch(f.awayTeam);
@@ -1520,21 +1605,8 @@
     let fixture = findFixtureForOddsEvent(league, event.home_team, event.away_team);
     if (fixture) return fixture;
 
-    // Map API team name to snapshot team name
-    const teams = league.teams || [];
-    const mapToSnapshotName = (apiName) => {
-      const n = normalizeForMatch(apiName);
-      const exact = teams.find(t => normalizeForMatch(t.name) === n);
-      if (exact) return exact.name;
-      const partial = teams.find(t => {
-        const tn = normalizeForMatch(t.name);
-        return tn.includes(n) || n.includes(tn);
-      });
-      return partial ? partial.name : apiName;
-    };
-
-    const homeName = mapToSnapshotName(event.home_team);
-    const awayName = mapToSnapshotName(event.away_team);
+    const homeName = resolveTeamName(event.home_team, league.teams || []);
+    const awayName = resolveTeamName(event.away_team, league.teams || []);
     const eventDate = event.commence_time ? new Date(event.commence_time) : new Date();
     const dateStr = `${String(eventDate.getDate()).padStart(2, "0")}/${String(eventDate.getMonth() + 1).padStart(2, "0")}/${eventDate.getFullYear()}`;
     const timeStr = `${String(eventDate.getHours()).padStart(2, "0")}:${String(eventDate.getMinutes()).padStart(2, "0")}`;
