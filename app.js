@@ -1473,8 +1473,175 @@
     });
   }
 
+  // ========= LIVE ODDS FETCHING =========
+  const ODDS_API_SPORT_KEYS = {
+    portugal: "soccer_portugal_primeira_liga",
+    spain: "soccer_spain_la_liga",
+    england: "soccer_epl"
+  };
+
+  const oddsApiKeyInput = document.getElementById("oddsApiKeyInput");
+  const saveApiKeyButton = document.getElementById("saveApiKeyButton");
+  const clearApiKeyButton = document.getElementById("clearApiKeyButton");
+  const fetchOddsNowButton = document.getElementById("fetchOddsNowButton");
+  const oddsApiStatus = document.getElementById("oddsApiStatus");
+
+  function getStoredApiKey() {
+    return localStorage.getItem("oddsApiKey") || "";
+  }
+
+  function setStoredApiKey(key) {
+    if (key) {
+      localStorage.setItem("oddsApiKey", key.trim());
+    } else {
+      localStorage.removeItem("oddsApiKey");
+    }
+  }
+
+  function normalizeForMatch(name) {
+    return String(name || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  }
+
+  function findFixtureForOddsEvent(league, homeTeam, awayTeam) {
+    const fixtures = Array.isArray(league.fixtures) ? league.fixtures : [];
+    const hn = normalizeForMatch(homeTeam);
+    const an = normalizeForMatch(awayTeam);
+    return fixtures.find(f => {
+      const fh = normalizeForMatch(f.homeTeam);
+      const fa = normalizeForMatch(f.awayTeam);
+      return (fh === hn || fh.includes(hn) || hn.includes(fh)) && (fa === an || fa.includes(an) || an.includes(fa));
+    }) || null;
+  }
+
+  async function fetchLiveOdds() {
+    const apiKey = getStoredApiKey();
+    if (!apiKey) {
+      if (oddsApiStatus) oddsApiStatus.textContent = "Sem chave API configurada. Introduza a chave acima.";
+      return;
+    }
+
+    if (oddsApiStatus) oddsApiStatus.textContent = "A buscar odds ao vivo...";
+
+    let totalMatched = 0;
+    let totalEvents = 0;
+
+    for (const leagueKey of leagueKeys) {
+      const sportKey = ODDS_API_SPORT_KEYS[leagueKey];
+      if (!sportKey) continue;
+
+      const league = snapshot.leagues[leagueKey];
+      try {
+        const url = `https://api.the-odds-api.com/v4/sports/${sportKey}/odds?apiKey=${encodeURIComponent(apiKey)}&regions=eu,uk&markets=h2h,totals&oddsFormat=decimal&dateFormat=iso`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          const errorText = response.status === 401 ? "Chave API inválida" : `Erro ${response.status}`;
+          if (oddsApiStatus) oddsApiStatus.textContent = `${errorText} ao buscar ${league.name}.`;
+          return;
+        }
+
+        const events = await response.json();
+        totalEvents += events.length;
+
+        for (const event of events) {
+          const fixture = findFixtureForOddsEvent(league, event.home_team, event.away_team);
+          if (!fixture) continue;
+
+          const bookmakerOdds = fixture.bookmakerOdds || {};
+          for (const bm of event.bookmakers || []) {
+            const entry = {
+              key: (bm.key || "").toLowerCase(),
+              name: bm.title || bm.key || "Bookmaker",
+              home: null, draw: null, away: null, over25: null, under25: null,
+              source: "odds-api-live",
+              provider: "The Odds API (ao vivo)"
+            };
+
+            for (const market of bm.markets || []) {
+              if (market.key === "h2h") {
+                for (const o of market.outcomes || []) {
+                  const price = Number(o.price);
+                  if (!Number.isFinite(price) || price <= 1) continue;
+                  const oName = normalizeForMatch(o.name);
+                  const hn = normalizeForMatch(event.home_team);
+                  const an = normalizeForMatch(event.away_team);
+                  if (oName === hn || oName.includes(hn) || hn.includes(oName)) entry.home = price;
+                  else if (oName === an || oName.includes(an) || an.includes(oName)) entry.away = price;
+                  else if (oName === "draw") entry.draw = price;
+                }
+              }
+              if (market.key === "totals") {
+                for (const o of market.outcomes || []) {
+                  const price = Number(o.price);
+                  if (!Number.isFinite(price) || price <= 1) continue;
+                  const point = Number(o.point);
+                  if (Math.abs((point || 2.5) - 2.5) < 0.01) {
+                    if (String(o.name).toLowerCase() === "over") entry.over25 = price;
+                    else entry.under25 = price;
+                  }
+                }
+              }
+            }
+
+            if ([entry.home, entry.draw, entry.away, entry.over25].some(v => v !== null)) {
+              bookmakerOdds[entry.key] = entry;
+            }
+          }
+
+          fixture.bookmakerOdds = bookmakerOdds;
+          fixture.oddsSource = "live";
+          fixture.apiProvider = "The Odds API (ao vivo)";
+          totalMatched++;
+        }
+      } catch (error) {
+        if (oddsApiStatus) oddsApiStatus.textContent = `Erro ao buscar ${league.name}: ${error.message}`;
+        return;
+      }
+    }
+
+    if (oddsApiStatus) {
+      oddsApiStatus.textContent = `Odds ao vivo atualizadas: ${totalMatched} jogos encontrados de ${totalEvents} eventos. Última atualização: ${new Date().toLocaleTimeString("pt-PT")}.`;
+    }
+
+    renderPrediction();
+  }
+
+  if (saveApiKeyButton) {
+    saveApiKeyButton.addEventListener("click", () => {
+      const key = oddsApiKeyInput?.value || "";
+      setStoredApiKey(key);
+      if (oddsApiStatus) oddsApiStatus.textContent = key ? "Chave guardada. A buscar odds..." : "Chave removida.";
+      if (key) fetchLiveOdds();
+    });
+  }
+
+  if (clearApiKeyButton) {
+    clearApiKeyButton.addEventListener("click", () => {
+      setStoredApiKey("");
+      if (oddsApiKeyInput) oddsApiKeyInput.value = "";
+      if (oddsApiStatus) oddsApiStatus.textContent = "Chave removida.";
+    });
+  }
+
+  if (fetchOddsNowButton) {
+    fetchOddsNowButton.addEventListener("click", fetchLiveOdds);
+  }
+
+  // Restore saved key and auto-fetch on load
+  if (oddsApiKeyInput) {
+    const savedKey = getStoredApiKey();
+    if (savedKey) {
+      oddsApiKeyInput.value = savedKey;
+    }
+  }
+
   populateLeagueOptions();
   populateTeamOptions();
   refreshDataStatus();
   renderPrediction();
+
+  // Auto-fetch odds on page load if key exists
+  if (getStoredApiKey()) {
+    fetchLiveOdds();
+  }
 })();

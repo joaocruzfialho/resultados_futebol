@@ -206,6 +206,26 @@
         </section>
 
         <section class="panel info-panel">
+          <h2>⚙️ Definições de Odds ao Vivo</h2>
+          <p class="small-note">Introduza a chave da <strong>The Odds API</strong> para buscar odds ao vivo sempre que abrir a app. A chave fica guardada no browser (localStorage). Registe-se grátis em <code>the-odds-api.com</code>.</p>
+          <div class="settings-grid">
+            <div>
+              <label for="oddsApiKeyInput">Chave The Odds API</label>
+              <input id="oddsApiKeyInput" type="password" placeholder="Cole aqui a sua chave" />
+            </div>
+            <div>
+              <label>&nbsp;</label>
+              <div class="actions">
+                <button id="saveApiKeyButton" class="primary" type="button">Guardar</button>
+                <button id="clearApiKeyButton" class="secondary" type="button">Limpar</button>
+                <button id="fetchOddsNowButton" class="secondary" type="button">Buscar odds agora</button>
+              </div>
+            </div>
+          </div>
+          <p id="oddsApiStatus" class="small-note" style="margin-top: 10px;">—</p>
+        </section>
+
+        <section class="panel info-panel">
           <h2>ℹ️ Como funciona</h2>
           <ol>
             <li>O sistema usa os resultados já jogados em 2025/26 nas três ligas.</li>
