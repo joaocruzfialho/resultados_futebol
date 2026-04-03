@@ -1690,6 +1690,7 @@
     let totalMatched = 0;
     let totalCreated = 0;
     let totalEvents = 0;
+    const matchedGames = [];
     const errors = [];
 
     for (const leagueKey of leagueKeys) {
@@ -1714,20 +1715,23 @@
         for (const event of events) {
           const existingFixture = findFixtureForOddsEvent(league, event.home_team, event.away_team);
           const fixture = existingFixture || findOrCreateFixture(league, event);
-
-          if (!existingFixture) totalCreated++;
+          const isNew = !existingFixture;
+          if (isNew) totalCreated++;
 
           const oddsData = parseOddsFromEvent(event);
+          const oddsCount = Object.keys(oddsData).length;
           fixture.bookmakerOdds = { ...(fixture.bookmakerOdds || {}), ...oddsData };
           fixture.oddsSource = "live";
           fixture.apiProvider = "The Odds API (ao vivo)";
           fixture.lastOddsUpdate = new Date().toISOString();
           totalMatched++;
+
+          matchedGames.push(`${fixture.homeTeam} vs ${fixture.awayTeam} (${oddsCount} casas${isNew ? ", novo" : ""})`);
         }
 
         if (remaining) {
           const rem = Number(remaining);
-          if (rem < 50 && oddsApiStatus) {
+          if (rem < 100) {
             errors.push(`Restam ${rem} pedidos na API`);
           }
         }
@@ -1737,12 +1741,18 @@
     }
 
     if (oddsApiStatus) {
-      const parts = [`${totalMatched} jogos com odds ao vivo`];
-      if (totalCreated > 0) parts.push(`${totalCreated} novos fixtures criados`);
-      parts.push(`${totalEvents} eventos totais`);
-      parts.push(`atualizado às ${new Date().toLocaleTimeString("pt-PT")}`);
-      if (errors.length) parts.push(`Avisos: ${errors.join("; ")}`);
-      oddsApiStatus.textContent = parts.join(" • ");
+      const lines = [];
+      if (totalMatched > 0) {
+        lines.push(`✅ ${totalMatched} jogos com odds ao vivo (${totalCreated} novos) de ${totalEvents} eventos.`);
+        lines.push(`Jogos: ${matchedGames.join(" | ")}`);
+      } else if (totalEvents === 0) {
+        lines.push(`⚠️ A API não devolveu jogos para nenhuma liga. Pode não haver jogos agendados de momento.`);
+      } else {
+        lines.push(`⚠️ ${totalEvents} eventos da API mas 0 jogos correspondidos. Possível problema de matching de nomes.`);
+      }
+      lines.push(`Atualizado às ${new Date().toLocaleTimeString("pt-PT")}.`);
+      if (errors.length) lines.push(`Erros: ${errors.join("; ")}`);
+      oddsApiStatus.innerHTML = lines.join("<br>");
     }
 
     // Refresh team selectors and prediction with new fixtures
