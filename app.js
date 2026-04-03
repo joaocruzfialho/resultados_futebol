@@ -299,10 +299,14 @@
     localStorage.setItem("selectedAway", elements.awayTeamSelect.value);
   }
 
-  function populateTeamOptions() {
+  function populateTeamOptions(forceFromStorage) {
     const league = getCurrentLeague();
-    const previousHome = elements.homeTeamSelect.value || localStorage.getItem("selectedHome") || "";
-    const previousAway = elements.awayTeamSelect.value || localStorage.getItem("selectedAway") || "";
+    const savedHome = localStorage.getItem("selectedHome") || "";
+    const savedAway = localStorage.getItem("selectedAway") || "";
+    const currentHome = elements.homeTeamSelect.value || "";
+    const currentAway = elements.awayTeamSelect.value || "";
+    const previousHome = forceFromStorage ? savedHome : (currentHome || savedHome);
+    const previousAway = forceFromStorage ? savedAway : (currentAway || savedAway);
     const teamNames = league.teams.map((team) => team.name);
 
     const optionsHtml = [...teamNames]
@@ -1829,7 +1833,7 @@
   if (savedLeague && leagueKeys.includes(savedLeague)) {
     elements.leagueSelect.value = savedLeague;
   }
-  populateTeamOptions();
+  populateTeamOptions(true);
   refreshDataStatus();
   renderPrediction();
 
