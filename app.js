@@ -1224,45 +1224,86 @@
   }
 
   // ========= RENDER: EXTENDED MARKETS =========
-  function renderExtendedMarkets(extended, probabilities) {
+  function getBookmakerByDefinition(sourceOdds, bookmakerDef) {
+    if (!sourceOdds) return null;
+    const usedKeys = new Set();
+    return findImportedBookmaker(sourceOdds, bookmakerDef, usedKeys);
+  }
+
+  function getBookmakerOddForMarket(bm, marketKey) {
+    if (!bm) return null;
+    const map = {
+      "home": bm.home, "draw": bm.draw, "away": bm.away,
+      "over25": bm.over25, "under25": bm.under25
+    };
+    const val = map[marketKey];
+    return Number.isFinite(val) && val > 1 ? val : null;
+  }
+
+  function renderExtendedMarkets(extended, probabilities, fixture) {
     const el = document.getElementById("extendedMarketsTable");
     if (!el) return;
+
+    const sourceOdds = fixture?.bookmakerOdds || {};
+    const betanoDef = PT_LEGAL_BOOKMAKERS.find(b => b.key === "betano");
+    const betclicDef = PT_LEGAL_BOOKMAKERS.find(b => b.key === "betclic");
+    const betano = getBookmakerByDefinition(sourceOdds, betanoDef);
+    const betclic = getBookmakerByDefinition(sourceOdds, betclicDef);
 
     const dc1x = probabilities.homeWin + probabilities.draw;
     const dcx2 = probabilities.draw + probabilities.awayWin;
     const dc12 = probabilities.homeWin + probabilities.awayWin;
 
+    // For 1X2 markets, derive DC odds from 1X2 odds
+    const deriveDcOdd = (bm, type) => {
+      if (!bm) return null;
+      const h = bm.home, d = bm.draw, a = bm.away;
+      if (!Number.isFinite(h) || !Number.isFinite(d) || !Number.isFinite(a) || h <= 1 || d <= 1 || a <= 1) return null;
+      const ph = 1 / h, pd = 1 / d, pa = 1 / a;
+      if (type === "1X") return 1 / (ph + pd);
+      if (type === "X2") return 1 / (pd + pa);
+      if (type === "12") return 1 / (ph + pa);
+      return null;
+    };
+
     const rows = [
-      { label: "DC 1X", prob: dc1x },
-      { label: "DC X2", prob: dcx2 },
-      { label: "DC 12", prob: dc12 },
-      { label: "Over 0.5", prob: extended.over05 },
-      { label: "Over 1.5", prob: extended.over15 },
-      { label: "Over 2.5", prob: extended.over25 },
-      { label: "Over 3.5", prob: extended.over35 },
-      { label: "Over 4.5", prob: extended.over45 },
-      { label: "Under 0.5", prob: extended.under05 },
-      { label: "Under 1.5", prob: extended.under15 },
-      { label: "Under 2.5", prob: extended.under25 },
-      { label: "Under 3.5", prob: extended.under35 },
-      { label: "Under 4.5", prob: extended.under45 },
-      { label: "Casa Over 0.5", prob: extended.homeOver05 },
-      { label: "Casa Over 1.5", prob: extended.homeOver15 },
-      { label: "Casa Over 2.5", prob: extended.homeOver25 },
-      { label: "Fora Over 0.5", prob: extended.awayOver05 },
-      { label: "Fora Over 1.5", prob: extended.awayOver15 },
-      { label: "Fora Over 2.5", prob: extended.awayOver25 }
+      { label: "DC 1X", prob: dc1x, bmKey: null, dcType: "1X" },
+      { label: "DC X2", prob: dcx2, bmKey: null, dcType: "X2" },
+      { label: "DC 12", prob: dc12, bmKey: null, dcType: "12" },
+      { label: "Over 0.5", prob: extended.over05, bmKey: null },
+      { label: "Over 1.5", prob: extended.over15, bmKey: null },
+      { label: "Over 2.5", prob: extended.over25, bmKey: "over25" },
+      { label: "Over 3.5", prob: extended.over35, bmKey: null },
+      { label: "Over 4.5", prob: extended.over45, bmKey: null },
+      { label: "Under 0.5", prob: extended.under05, bmKey: null },
+      { label: "Under 1.5", prob: extended.under15, bmKey: null },
+      { label: "Under 2.5", prob: extended.under25, bmKey: "under25" },
+      { label: "Under 3.5", prob: extended.under35, bmKey: null },
+      { label: "Under 4.5", prob: extended.under45, bmKey: null },
+      { label: "Casa Over 0.5", prob: extended.homeOver05, bmKey: null },
+      { label: "Casa Over 1.5", prob: extended.homeOver15, bmKey: null },
+      { label: "Casa Over 2.5", prob: extended.homeOver25, bmKey: null },
+      { label: "Fora Over 0.5", prob: extended.awayOver05, bmKey: null },
+      { label: "Fora Over 1.5", prob: extended.awayOver15, bmKey: null },
+      { label: "Fora Over 2.5", prob: extended.awayOver25, bmKey: null }
     ];
 
     el.innerHTML = `
       <table>
-        <thead><tr><th>Mercado</th><th>Prob.</th><th>Odd justa</th></tr></thead>
-        <tbody>${rows.map(r => `
+        <thead><tr><th>Mercado</th><th>Prob.</th><th>Odd justa</th><th>Betano</th><th>Betclic</th></tr></thead>
+        <tbody>${rows.map(r => {
+          const betanoOdd = r.dcType ? deriveDcOdd(betano, r.dcType) : getBookmakerOddForMarket(betano, r.bmKey);
+          const betclicOdd = r.dcType ? deriveDcOdd(betclic, r.dcType) : getBookmakerOddForMarket(betclic, r.bmKey);
+          const fairOdd = toFairOdd(r.prob);
+          return `
           <tr>
             <td><strong>${r.label}</strong></td>
             <td>${formatPercent(r.prob)}</td>
-            <td>${formatOdd(toFairOdd(r.prob))}</td>
-          </tr>`).join("")}
+            <td>${formatOdd(fairOdd)}</td>
+            <td>${betanoOdd ? formatOdd(betanoOdd) : "—"}</td>
+            <td>${betclicOdd ? formatOdd(betclicOdd) : "—"}</td>
+          </tr>`;
+        }).join("")}
         </tbody>
       </table>`;
   }
@@ -1453,7 +1494,7 @@
     renderHalfTimeTable(halfTimeProbabilities);
     renderMarketTable(probabilities, bestImported);
     renderContextInfo(model);
-    renderExtendedMarkets(extendedMarkets, probabilities);
+    renderExtendedMarkets(extendedMarkets, probabilities, model.fixture);
     renderHandicaps(handicaps);
     renderHtFtTable(htftProbs);
     renderGoalTiming(goalTiming);
