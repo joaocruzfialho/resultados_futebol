@@ -1525,7 +1525,8 @@
   const ODDS_API_SPORT_KEYS = {
     portugal: "soccer_portugal_primeira_liga",
     spain: "soccer_spain_la_liga",
-    england: "soccer_epl"
+    england: "soccer_epl",
+    italy: "soccer_italy_serie_a"
   };
 
   const oddsApiKeyInput = document.getElementById("oddsApiKeyInput");
@@ -1586,6 +1587,29 @@
     "getafe cf": "Getafe",
     "ca osasuna": "Osasuna", "osasuna": "Osasuna",
     "valencia cf": "Valencia",
+    // Italy
+    "internazionale": "Inter", "inter milan": "Inter", "fc internazionale milano": "Inter", "inter": "Inter",
+    "ac milan": "Milan", "milan": "Milan",
+    "juventus fc": "Juventus", "juventus": "Juventus",
+    "ssc napoli": "Napoli", "napoli": "Napoli",
+    "as roma": "Roma", "roma": "Roma",
+    "ss lazio": "Lazio", "lazio": "Lazio",
+    "atalanta bc": "Atalanta", "atalanta": "Atalanta",
+    "acf fiorentina": "Fiorentina", "fiorentina": "Fiorentina",
+    "bologna fc": "Bologna", "bologna fc 1909": "Bologna",
+    "torino fc": "Torino", "torino": "Torino",
+    "udinese calcio": "Udinese", "udinese": "Udinese",
+    "us sassuolo": "Sassuolo", "sassuolo": "Sassuolo",
+    "hellas verona": "Verona", "hellas verona fc": "Verona",
+    "us lecce": "Lecce", "lecce": "Lecce",
+    "genoa cfc": "Genoa", "genoa": "Genoa",
+    "cagliari calcio": "Cagliari", "cagliari": "Cagliari",
+    "empoli fc": "Empoli", "empoli": "Empoli",
+    "venezia fc": "Venezia", "venezia": "Venezia",
+    "parma calcio 1913": "Parma", "parma": "Parma",
+    "como 1907": "Como", "como": "Como",
+    "us cremonese": "Cremonese", "cremonese": "Cremonese",
+    "ac monza": "Monza", "monza": "Monza",
     // England
     "manchester city": "Man City", "man city": "Man City",
     "manchester united": "Man United", "man united": "Man United", "manchester utd": "Man United", "man utd": "Man United",

@@ -35,6 +35,15 @@ const LEAGUES = [
     understatKey: "EPL",
     oddsApiSportKey: "soccer_epl",
     apiFootballLeagueId: 39
+  },
+  {
+    key: "italy",
+    country: "Itália",
+    name: "Serie A",
+    url: "https://www.football-data.co.uk/mmz4281/2526/I1.csv",
+    understatKey: "Serie A",
+    oddsApiSportKey: "soccer_italy_serie_a",
+    apiFootballLeagueId: 135
   }
 ];
 
