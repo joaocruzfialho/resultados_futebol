@@ -287,6 +287,14 @@ button.secondary {
   font-size: 1.35rem;
 }
 
+.odd-label {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
 .accent-blue {
   border-color: rgba(97, 169, 255, 0.28);
 }

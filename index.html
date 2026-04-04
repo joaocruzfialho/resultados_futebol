@@ -102,21 +102,26 @@
           </div>
 
           <div class="probability-grid">
-            <article class="metric-card"><span>Vitória casa</span><strong id="homeWin">—</strong></article>
-            <article class="metric-card"><span>Empate</span><strong id="drawProb">—</strong></article>
-            <article class="metric-card"><span>Vitória fora</span><strong id="awayWin">—</strong></article>
-            <article class="metric-card"><span>Mais de 2.5 golos</span><strong id="over25">—</strong></article>
-            <article class="metric-card"><span>Ambas marcam</span><strong id="btts">—</strong></article>
+            <article class="metric-card"><span>Vitória casa</span><strong id="homeWin">—</strong><small class="odd-label" id="homeWinOdd"></small></article>
+            <article class="metric-card"><span>Empate</span><strong id="drawProb">—</strong><small class="odd-label" id="drawProbOdd"></small></article>
+            <article class="metric-card"><span>Vitória fora</span><strong id="awayWin">—</strong><small class="odd-label" id="awayWinOdd"></small></article>
+            <article class="metric-card"><span>Mais de 2.5 golos</span><strong id="over25">—</strong><small class="odd-label" id="over25Odd"></small></article>
+            <article class="metric-card"><span>Ambas marcam</span><strong id="btts">—</strong><small class="odd-label" id="bttsOdd"></small></article>
           </div>
 
           <h3 class="subsection-title">⏱️ Probabilidades ao intervalo</h3>
           <div class="probability-grid half-time-grid">
-            <article class="metric-card"><span>HT vitória casa</span><strong id="htHomeWin">—</strong></article>
-            <article class="metric-card"><span>HT empate</span><strong id="htDrawProb">—</strong></article>
-            <article class="metric-card"><span>HT vitória fora</span><strong id="htAwayWin">—</strong></article>
-            <article class="metric-card"><span>HT 0-0</span><strong id="htNoGoal">—</strong></article>
+            <article class="metric-card"><span>HT vitória casa</span><strong id="htHomeWin">—</strong><small class="odd-label" id="htHomeWinOdd"></small></article>
+            <article class="metric-card"><span>HT empate</span><strong id="htDrawProb">—</strong><small class="odd-label" id="htDrawProbOdd"></small></article>
+            <article class="metric-card"><span>HT vitória fora</span><strong id="htAwayWin">—</strong><small class="odd-label" id="htAwayWinOdd"></small></article>
+            <article class="metric-card"><span>HT 0-0</span><strong id="htNoGoal">—</strong><small class="odd-label" id="htNoGoalOdd"></small></article>
           </div>
           <div id="htOddsTable" class="table-shell"></div>
+        </section>
+
+        <section class="panel breakdown full-width">
+          <h2>💡 Tips Recomendadas (Value Bets + Kelly)</h2>
+          <div id="tipsContainer"></div>
         </section>
 
         <section class="panel breakdown">
@@ -198,11 +203,6 @@
         <section class="panel breakdown full-width">
           <h2>🏆 Power Ranking da Liga</h2>
           <div id="powerRankingTable" class="table-shell"></div>
-        </section>
-
-        <section class="panel breakdown full-width">
-          <h2>💡 Tips Recomendadas (Value Bets + Kelly)</h2>
-          <div id="tipsContainer"></div>
         </section>
 
         <section class="panel info-panel">

@@ -761,6 +761,15 @@
     elements.htAwayWin.textContent = formatPercent(probabilities.awayWin);
     elements.htNoGoal.textContent = formatPercent(probabilities.zeroZero);
 
+    const setHtOdd = (id, prob) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = `Odd: ${formatOdd(toFairOdd(prob))}`;
+    };
+    setHtOdd("htHomeWinOdd", probabilities.homeWin);
+    setHtOdd("htDrawProbOdd", probabilities.draw);
+    setHtOdd("htAwayWinOdd", probabilities.awayWin);
+    setHtOdd("htNoGoalOdd", probabilities.zeroZero);
+
     const rows = [
       { label: "HT 1", probability: probabilities.homeWin },
       { label: "HT X", probability: probabilities.draw },
@@ -1421,6 +1430,17 @@
     elements.awayWin.textContent = formatPercent(probabilities.awayWin);
     elements.over25.textContent = formatPercent(probabilities.over25);
     elements.btts.textContent = formatPercent(probabilities.btts);
+
+    // Fair odds nos cards FT
+    const setOddLabel = (id, prob) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = `Odd: ${formatOdd(toFairOdd(prob))}`;
+    };
+    setOddLabel("homeWinOdd", probabilities.homeWin);
+    setOddLabel("drawProbOdd", probabilities.draw);
+    setOddLabel("awayWinOdd", probabilities.awayWin);
+    setOddLabel("over25Odd", probabilities.over25);
+    setOddLabel("bttsOdd", probabilities.btts);
 
     const extendedMarkets = calculateExtendedMarkets(model.expectedHomeGoals, model.expectedAwayGoals, model.rho);
     const handicaps = calculateHandicaps(model.expectedHomeGoals, model.expectedAwayGoals, model.rho);
