@@ -1,6 +1,6 @@
 window.DATA_SNAPSHOT = {
   "season": "2025/26",
-  "generatedAt": "2026-04-22T19:22:02.720Z",
+  "generatedAt": "2026-04-23T08:03:43.815Z",
   "sourceNote": "Dados públicos recolhidos de football-data.co.uk com xG real do Understat (quando disponível), contexto de descanso, estatísticas HT e odds por casa. Se existir ODDS_API_KEY, a app junta odds ao vivo via The Odds API.",
   "leagues": {
     "portugal": {
@@ -24529,8 +24529,8 @@ window.DATA_SNAPSHOT = {
       "awayGoalsAvg": 1.119,
       "firstHalfHomeGoalsAvg": 0.684,
       "firstHalfAwayGoalsAvg": 0.465,
-      "homeXgAvg": 1.771,
-      "awayXgAvg": 1.313,
+      "homeXgAvg": 1.782,
+      "awayXgAvg": 1.317,
       "homeShotsOnTargetAvg": 4.877,
       "awayShotsOnTargetAvg": 3.826,
       "dixonColesRho": -0.038,
@@ -50476,22 +50476,12 @@ window.DATA_SNAPSHOT = {
           "homeShotsOnTargetAgainst": 40,
           "awayShotsOnTargetFor": 104,
           "awayShotsOnTargetAgainst": 73,
-          "homeXgFor": 47.073,
-          "homeXgAgainst": 16.09,
+          "homeXgFor": 48.618,
+          "homeXgAgainst": 17.164,
           "awayXgFor": 42.462,
           "awayXgAgainst": 27.315,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-02-16 20:00:00",
-              "venue": "away",
-              "result": "L",
-              "points": 0,
-              "goalsFor": 1,
-              "goalsAgainst": 2,
-              "xgFor": 2.697,
-              "xgAgainst": 2.89
-            },
             {
               "date": "2026-02-22 15:15:00",
               "venue": "home",
@@ -50561,6 +50551,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 1,
               "xgFor": 3.308,
               "xgAgainst": 1.131
+            },
+            {
+              "date": "2026-04-22 19:30:00",
+              "venue": "home",
+              "result": "W",
+              "points": 3,
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "xgFor": 1.545,
+              "xgAgainst": 1.074
             }
           ],
           "form": "WWWWW",
@@ -51068,20 +51068,10 @@ window.DATA_SNAPSHOT = {
           "awayShotsOnTargetAgainst": 67,
           "homeXgFor": 23.683,
           "homeXgAgainst": 21.712,
-          "awayXgFor": 19.599,
-          "awayXgAgainst": 21.057,
+          "awayXgFor": 20.673,
+          "awayXgAgainst": 22.602,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-02-14 13:00:00",
-              "venue": "away",
-              "result": "D",
-              "points": 1,
-              "goalsFor": 2,
-              "goalsAgainst": 2,
-              "xgFor": 2.815,
-              "xgAgainst": 1.161
-            },
             {
               "date": "2026-02-22 17:30:00",
               "venue": "home",
@@ -51151,6 +51141,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 3,
               "xgFor": 1.159,
               "xgAgainst": 2.128
+            },
+            {
+              "date": "2026-04-22 19:30:00",
+              "venue": "away",
+              "result": "L",
+              "points": 0,
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "xgFor": 1.074,
+              "xgAgainst": 1.545
             }
           ],
           "form": "LDLWL",
@@ -51184,22 +51184,12 @@ window.DATA_SNAPSHOT = {
           "homeShotsOnTargetAgainst": 64,
           "awayShotsOnTargetFor": 67,
           "awayShotsOnTargetAgainst": 67,
-          "homeXgFor": 31.199,
-          "homeXgAgainst": 21.821,
+          "homeXgFor": 33.101,
+          "homeXgAgainst": 22.036,
           "awayXgFor": 18.28,
           "awayXgAgainst": 25.384,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-02-14 20:00:00",
-              "venue": "away",
-              "result": "L",
-              "points": 0,
-              "goalsFor": 1,
-              "goalsAgainst": 4,
-              "xgFor": 1.66,
-              "xgAgainst": 3.059
-            },
             {
               "date": "2026-02-21 13:00:00",
               "venue": "home",
@@ -51269,6 +51259,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 3,
               "xgFor": 1.295,
               "xgAgainst": 1.206
+            },
+            {
+              "date": "2026-04-22 18:00:00",
+              "venue": "home",
+              "result": "L",
+              "points": 0,
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "xgFor": 1.902,
+              "xgAgainst": 0.215
             }
           ],
           "form": "LWLWD",
@@ -51304,20 +51304,10 @@ window.DATA_SNAPSHOT = {
           "awayShotsOnTargetAgainst": 75,
           "homeXgFor": 12.496,
           "homeXgAgainst": 14.518,
-          "awayXgFor": 15.706,
-          "awayXgAgainst": 26.413,
+          "awayXgFor": 15.921,
+          "awayXgAgainst": 28.315,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-02-14 15:15:00",
-              "venue": "home",
-              "result": "W",
-              "points": 3,
-              "goalsFor": 2,
-              "goalsAgainst": 1,
-              "xgFor": 1.618,
-              "xgAgainst": 0.969
-            },
             {
               "date": "2026-02-22 13:00:00",
               "venue": "home",
@@ -51387,6 +51377,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 1,
               "xgFor": 0.291,
               "xgAgainst": 3.328
+            },
+            {
+              "date": "2026-04-22 18:00:00",
+              "venue": "away",
+              "result": "W",
+              "points": 3,
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "xgFor": 0.215,
+              "xgAgainst": 1.902
             }
           ],
           "form": "WLWWL",
@@ -52845,8 +52845,8 @@ window.DATA_SNAPSHOT = {
       "awayGoalsAvg": 1.237,
       "firstHalfHomeGoalsAvg": 0.678,
       "firstHalfAwayGoalsAvg": 0.514,
-      "homeXgAvg": 1.681,
-      "awayXgAvg": 1.363,
+      "homeXgAvg": 1.69,
+      "awayXgAvg": 1.377,
       "homeShotsOnTargetAvg": 4.426,
       "awayShotsOnTargetAvg": 3.875,
       "dixonColesRho": -0.111,
@@ -80608,20 +80608,10 @@ window.DATA_SNAPSHOT = {
           "awayShotsOnTargetAgainst": 61,
           "homeXgFor": 36.183,
           "homeXgAgainst": 18.429,
-          "awayXgFor": 29.37,
-          "awayXgAgainst": 20.151,
+          "awayXgFor": 32.779,
+          "awayXgAgainst": 21.124,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-02-08 16:30:00",
-              "venue": "away",
-              "result": "W",
-              "points": 3,
-              "goalsFor": 2,
-              "goalsAgainst": 1,
-              "xgFor": 2.415,
-              "xgAgainst": 1.267
-            },
             {
               "date": "2026-02-11 19:30:00",
               "venue": "home",
@@ -80691,6 +80681,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 1,
               "xgFor": 2.615,
               "xgAgainst": 2.29
+            },
+            {
+              "date": "2026-04-22 19:00:00",
+              "venue": "away",
+              "result": "W",
+              "points": 3,
+              "goalsFor": 1,
+              "goalsAgainst": 0,
+              "xgFor": 3.409,
+              "xgAgainst": 0.974
             }
           ],
           "form": "WDDWW",
@@ -81314,22 +81314,12 @@ window.DATA_SNAPSHOT = {
           "homeShotsOnTargetAgainst": 50,
           "awayShotsOnTargetFor": 83,
           "awayShotsOnTargetAgainst": 96,
-          "homeXgFor": 26.312,
-          "homeXgAgainst": 13.028,
+          "homeXgFor": 28.226,
+          "homeXgAgainst": 14.244,
           "awayXgFor": 32.263,
           "awayXgAgainst": 37.276,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-02-10 19:30:00",
-              "venue": "away",
-              "result": "W",
-              "points": 3,
-              "goalsFor": 2,
-              "goalsAgainst": 1,
-              "xgFor": 1.412,
-              "xgAgainst": 2.331
-            },
             {
               "date": "2026-02-21 17:30:00",
               "venue": "away",
@@ -81399,6 +81389,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 1,
               "xgFor": 3.367,
               "xgAgainst": 1.612
+            },
+            {
+              "date": "2026-04-22 19:00:00",
+              "venue": "home",
+              "result": "D",
+              "points": 1,
+              "goalsFor": 2,
+              "goalsAgainst": 2,
+              "xgFor": 1.914,
+              "xgAgainst": 1.216
             }
           ],
           "form": "DDDWW",
@@ -82142,20 +82142,10 @@ window.DATA_SNAPSHOT = {
           "awayShotsOnTargetAgainst": 76,
           "homeXgFor": 30.502,
           "homeXgAgainst": 20.722,
-          "awayXgFor": 21.39,
-          "awayXgAgainst": 26.801,
+          "awayXgFor": 22.606,
+          "awayXgAgainst": 28.715,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-02-10 19:30:00",
-              "venue": "away",
-              "result": "D",
-              "points": 1,
-              "goalsFor": 2,
-              "goalsAgainst": 2,
-              "xgFor": 1.289,
-              "xgAgainst": 3.212
-            },
             {
               "date": "2026-02-21 15:00:00",
               "venue": "away",
@@ -82225,6 +82215,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 0,
               "xgFor": 3.558,
               "xgAgainst": 0.569
+            },
+            {
+              "date": "2026-04-22 19:00:00",
+              "venue": "away",
+              "result": "D",
+              "points": 1,
+              "goalsFor": 2,
+              "goalsAgainst": 2,
+              "xgFor": 1.216,
+              "xgAgainst": 1.914
             }
           ],
           "form": "LDDWW",
@@ -82612,22 +82612,12 @@ window.DATA_SNAPSHOT = {
           "homeShotsOnTargetAgainst": 93,
           "awayShotsOnTargetFor": 52,
           "awayShotsOnTargetAgainst": 92,
-          "homeXgFor": 16.989,
-          "homeXgAgainst": 29.824,
+          "homeXgFor": 17.963,
+          "homeXgAgainst": 33.233,
           "awayXgFor": 15.352,
           "awayXgAgainst": 41.43,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-02-11 19:30:00",
-              "venue": "away",
-              "result": "W",
-              "points": 3,
-              "goalsFor": 3,
-              "goalsAgainst": 2,
-              "xgFor": 0.691,
-              "xgAgainst": 2.128
-            },
             {
               "date": "2026-02-21 15:00:00",
               "venue": "away",
@@ -82697,6 +82687,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 4,
               "xgFor": 0.601,
               "xgAgainst": 1.442
+            },
+            {
+              "date": "2026-04-22 19:00:00",
+              "venue": "home",
+              "result": "L",
+              "points": 0,
+              "goalsFor": 0,
+              "goalsAgainst": 1,
+              "xgFor": 0.974,
+              "xgAgainst": 3.409
             }
           ],
           "form": "LDLLL",
