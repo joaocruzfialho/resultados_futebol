@@ -1,6 +1,6 @@
 window.DATA_SNAPSHOT = {
   "season": "2025/26",
-  "generatedAt": "2026-05-23T08:25:13.021Z",
+  "generatedAt": "2026-05-23T19:18:21.730Z",
   "sourceNote": "Dados públicos recolhidos de football-data.co.uk com xG real do Understat (quando disponível), contexto de descanso, estatísticas HT e odds por casa. Se existir ODDS_API_KEY, a app junta odds ao vivo via The Odds API.",
   "leagues": {
     "portugal": {
@@ -91434,7 +91434,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.869
             },
             {
-              "date": "2026-05-02 16:30:00",
+              "date": "2026-05-02 17:30:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -91444,7 +91444,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.697
             },
             {
-              "date": "2026-05-10 15:30:00",
+              "date": "2026-05-10 16:30:00",
               "venue": "away",
               "result": "W",
               "points": 3,
@@ -91454,7 +91454,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.32
             },
             {
-              "date": "2026-05-18 19:00:00",
+              "date": "2026-05-18 20:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -91542,7 +91542,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.974
             },
             {
-              "date": "2026-05-04 19:00:00",
+              "date": "2026-05-04 20:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -91552,7 +91552,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.686
             },
             {
-              "date": "2026-05-09 16:30:00",
+              "date": "2026-05-09 17:30:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -91562,7 +91562,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.67
             },
             {
-              "date": "2026-05-13 19:00:00",
+              "date": "2026-05-13 20:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -91572,7 +91572,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.429
             },
             {
-              "date": "2026-05-19 18:30:00",
+              "date": "2026-05-19 19:30:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -91670,7 +91670,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.304
             },
             {
-              "date": "2026-05-03 14:30:00",
+              "date": "2026-05-03 15:30:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -91680,7 +91680,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.028
             },
             {
-              "date": "2026-05-09 14:00:00",
+              "date": "2026-05-09 15:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -91690,7 +91690,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.238
             },
             {
-              "date": "2026-05-17 11:30:00",
+              "date": "2026-05-17 12:30:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -91788,7 +91788,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.241
             },
             {
-              "date": "2026-05-03 18:00:00",
+              "date": "2026-05-03 19:00:00",
               "venue": "home",
               "result": "L",
               "points": 0,
@@ -91798,7 +91798,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.122
             },
             {
-              "date": "2026-05-10 13:00:00",
+              "date": "2026-05-10 14:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -91808,7 +91808,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.712
             },
             {
-              "date": "2026-05-15 19:00:00",
+              "date": "2026-05-15 20:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -91906,7 +91906,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.199
             },
             {
-              "date": "2026-05-03 14:30:00",
+              "date": "2026-05-03 15:30:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -91916,7 +91916,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.556
             },
             {
-              "date": "2026-05-09 11:30:00",
+              "date": "2026-05-09 12:30:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -91926,7 +91926,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.597
             },
             {
-              "date": "2026-05-15 19:00:00",
+              "date": "2026-05-15 20:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -92024,7 +92024,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.216
             },
             {
-              "date": "2026-05-03 13:00:00",
+              "date": "2026-05-03 14:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -92034,7 +92034,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.678
             },
             {
-              "date": "2026-05-09 14:00:00",
+              "date": "2026-05-09 15:00:00",
               "venue": "away",
               "result": "W",
               "points": 3,
@@ -92044,7 +92044,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.243
             },
             {
-              "date": "2026-05-19 18:30:00",
+              "date": "2026-05-19 19:30:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -92142,7 +92142,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.298
             },
             {
-              "date": "2026-05-02 14:00:00",
+              "date": "2026-05-02 15:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -92152,7 +92152,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 3.129
             },
             {
-              "date": "2026-05-09 14:00:00",
+              "date": "2026-05-09 15:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -92162,7 +92162,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.516
             },
             {
-              "date": "2026-05-17 14:00:00",
+              "date": "2026-05-17 15:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -92260,7 +92260,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.518
             },
             {
-              "date": "2026-05-04 14:00:00",
+              "date": "2026-05-04 15:00:00",
               "venue": "home",
               "result": "L",
               "points": 0,
@@ -92270,7 +92270,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.31
             },
             {
-              "date": "2026-05-09 11:30:00",
+              "date": "2026-05-09 12:30:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -92280,7 +92280,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.623
             },
             {
-              "date": "2026-05-19 19:15:00",
+              "date": "2026-05-19 20:15:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -92378,7 +92378,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.849
             },
             {
-              "date": "2026-05-02 14:00:00",
+              "date": "2026-05-02 15:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -92388,7 +92388,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.754
             },
             {
-              "date": "2026-05-09 16:30:00",
+              "date": "2026-05-09 17:30:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -92398,7 +92398,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 4.374
             },
             {
-              "date": "2026-05-17 14:00:00",
+              "date": "2026-05-17 15:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -92496,7 +92496,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.542
             },
             {
-              "date": "2026-05-02 14:00:00",
+              "date": "2026-05-02 15:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -92506,7 +92506,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.961
             },
             {
-              "date": "2026-05-09 14:00:00",
+              "date": "2026-05-09 15:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -92516,7 +92516,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.536
             },
             {
-              "date": "2026-05-17 14:00:00",
+              "date": "2026-05-17 15:00:00",
               "venue": "away",
               "result": "W",
               "points": 3,
@@ -92614,7 +92614,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.639
             },
             {
-              "date": "2026-05-02 14:00:00",
+              "date": "2026-05-02 15:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -92624,7 +92624,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.871
             },
             {
-              "date": "2026-05-10 13:00:00",
+              "date": "2026-05-10 14:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -92634,7 +92634,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.464
             },
             {
-              "date": "2026-05-17 16:30:00",
+              "date": "2026-05-17 17:30:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -92732,7 +92732,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.836
             },
             {
-              "date": "2026-05-04 19:00:00",
+              "date": "2026-05-04 20:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -92742,7 +92742,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.417
             },
             {
-              "date": "2026-05-10 13:00:00",
+              "date": "2026-05-10 14:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -92752,7 +92752,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 3.288
             },
             {
-              "date": "2026-05-17 14:00:00",
+              "date": "2026-05-17 15:00:00",
               "venue": "home",
               "result": "L",
               "points": 0,
@@ -92850,7 +92850,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.906
             },
             {
-              "date": "2026-05-02 16:30:00",
+              "date": "2026-05-02 17:30:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -92860,7 +92860,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 4.091
             },
             {
-              "date": "2026-05-09 14:00:00",
+              "date": "2026-05-09 15:00:00",
               "venue": "home",
               "result": "L",
               "points": 0,
@@ -92870,7 +92870,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.998
             },
             {
-              "date": "2026-05-17 14:00:00",
+              "date": "2026-05-17 15:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -92968,7 +92968,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.914
             },
             {
-              "date": "2026-05-01 19:00:00",
+              "date": "2026-05-01 20:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -92978,7 +92978,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.435
             },
             {
-              "date": "2026-05-11 19:00:00",
+              "date": "2026-05-11 20:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -92988,7 +92988,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.49
             },
             {
-              "date": "2026-05-17 14:00:00",
+              "date": "2026-05-17 15:00:00",
               "venue": "home",
               "result": "W",
               "points": 3,
@@ -93076,7 +93076,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.451
             },
             {
-              "date": "2026-05-03 13:00:00",
+              "date": "2026-05-03 14:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93086,7 +93086,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.296
             },
             {
-              "date": "2026-05-10 13:00:00",
+              "date": "2026-05-10 14:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -93096,7 +93096,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.103
             },
             {
-              "date": "2026-05-13 19:00:00",
+              "date": "2026-05-13 20:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93106,7 +93106,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.957
             },
             {
-              "date": "2026-05-17 14:00:00",
+              "date": "2026-05-17 15:00:00",
               "venue": "away",
               "result": "D",
               "points": 1,
@@ -93204,7 +93204,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.614
             },
             {
-              "date": "2026-05-04 14:00:00",
+              "date": "2026-05-04 15:00:00",
               "venue": "away",
               "result": "W",
               "points": 3,
@@ -93214,7 +93214,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.171
             },
             {
-              "date": "2026-05-10 13:00:00",
+              "date": "2026-05-10 14:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -93224,7 +93224,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.651
             },
             {
-              "date": "2026-05-17 11:30:00",
+              "date": "2026-05-17 12:30:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93322,7 +93322,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.763
             },
             {
-              "date": "2026-05-03 18:00:00",
+              "date": "2026-05-03 19:00:00",
               "venue": "away",
               "result": "W",
               "points": 3,
@@ -93332,7 +93332,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.609
             },
             {
-              "date": "2026-05-11 19:00:00",
+              "date": "2026-05-11 20:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -93342,7 +93342,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.87
             },
             {
-              "date": "2026-05-19 19:15:00",
+              "date": "2026-05-19 20:15:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93440,7 +93440,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.114
             },
             {
-              "date": "2026-05-02 14:00:00",
+              "date": "2026-05-02 15:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93450,7 +93450,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.274
             },
             {
-              "date": "2026-05-10 15:30:00",
+              "date": "2026-05-10 16:30:00",
               "venue": "home",
               "result": "L",
               "points": 0,
@@ -93460,7 +93460,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.43
             },
             {
-              "date": "2026-05-17 16:30:00",
+              "date": "2026-05-17 17:30:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93558,7 +93558,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 3.409
             },
             {
-              "date": "2026-05-01 19:00:00",
+              "date": "2026-05-01 20:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93568,7 +93568,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.095
             },
             {
-              "date": "2026-05-10 13:00:00",
+              "date": "2026-05-10 14:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -93578,7 +93578,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.755
             },
             {
-              "date": "2026-05-18 19:00:00",
+              "date": "2026-05-18 20:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93676,7 +93676,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 1.064
             },
             {
-              "date": "2026-05-02 14:00:00",
+              "date": "2026-05-02 15:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -93686,7 +93686,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 0.924
             },
             {
-              "date": "2026-05-09 14:00:00",
+              "date": "2026-05-09 15:00:00",
               "venue": "away",
               "result": "L",
               "points": 0,
@@ -93696,7 +93696,7 @@ window.DATA_SNAPSHOT = {
               "xgAgainst": 2.224
             },
             {
-              "date": "2026-05-17 14:00:00",
+              "date": "2026-05-17 15:00:00",
               "venue": "home",
               "result": "D",
               "points": 1,
@@ -93746,8 +93746,8 @@ window.DATA_SNAPSHOT = {
       "awayGoalsAvg": 1.141,
       "firstHalfHomeGoalsAvg": 0.541,
       "firstHalfAwayGoalsAvg": 0.495,
-      "homeXgAvg": 1.535,
-      "awayXgAvg": 1.252,
+      "homeXgAvg": 1.54,
+      "awayXgAvg": 1.256,
       "homeShotsOnTargetAvg": 4.441,
       "awayShotsOnTargetAvg": 3.605,
       "dixonColesRho": 0.022,
@@ -124440,20 +124440,10 @@ window.DATA_SNAPSHOT = {
           "awayShotsOnTargetAgainst": 48,
           "homeXgFor": 50.961,
           "homeXgAgainst": 14.786,
-          "awayXgFor": 34.903,
-          "awayXgAgainst": 19.464,
+          "awayXgFor": 36.09,
+          "awayXgAgainst": 21.061,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-03-22 19:45:00",
-              "venue": "away",
-              "result": "D",
-              "points": 1,
-              "goalsFor": 1,
-              "goalsAgainst": 1,
-              "xgFor": 1.401,
-              "xgAgainst": 1.814
-            },
             {
               "date": "2026-04-05 18:45:00",
               "venue": "home",
@@ -124523,6 +124513,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 1,
               "xgFor": 2.841,
               "xgAgainst": 0.912
+            },
+            {
+              "date": "2026-05-23 16:00:00",
+              "venue": "away",
+              "result": "D",
+              "points": 1,
+              "goalsFor": 3,
+              "goalsAgainst": 3,
+              "xgFor": 1.187,
+              "xgAgainst": 1.597
             }
           ],
           "form": "WDWWD",
@@ -125264,22 +125264,12 @@ window.DATA_SNAPSHOT = {
           "homeShotsOnTargetAgainst": 53,
           "awayShotsOnTargetFor": 72,
           "awayShotsOnTargetAgainst": 79,
-          "homeXgFor": 24.981,
-          "homeXgAgainst": 22.563,
+          "homeXgFor": 26.577,
+          "homeXgAgainst": 23.749,
           "awayXgFor": 23.467,
           "awayXgAgainst": 27.158,
           "xgSource": "understat",
           "recentMatchLogs": [
-            {
-              "date": "2026-03-22 14:00:00",
-              "venue": "home",
-              "result": "L",
-              "points": 0,
-              "goalsFor": 0,
-              "goalsAgainst": 2,
-              "xgFor": 1.329,
-              "xgAgainst": 2.144
-            },
             {
               "date": "2026-04-05 13:00:00",
               "venue": "away",
@@ -125349,6 +125339,16 @@ window.DATA_SNAPSHOT = {
               "goalsAgainst": 0,
               "xgFor": 1.066,
               "xgAgainst": 0.871
+            },
+            {
+              "date": "2026-05-23 16:00:00",
+              "venue": "home",
+              "result": "D",
+              "points": 1,
+              "goalsFor": 3,
+              "goalsAgainst": 3,
+              "xgFor": 1.597,
+              "xgAgainst": 1.187
             }
           ],
           "form": "LLDWW",
