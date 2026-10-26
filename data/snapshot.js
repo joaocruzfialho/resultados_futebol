@@ -1,6 +1,6 @@
 window.DATA_SNAPSHOT = {
   "season": "2025/26",
-  "generatedAt": "2026-10-25T20:37:29.424Z",
+  "generatedAt": "2026-10-26T12:34:31.547Z",
   "sourceNote": "Dados públicos recolhidos de football-data.co.uk com xG real do Understat (quando disponível), contexto de descanso, estatísticas HT e odds por casa. Se existir ODDS_API_KEY, a app junta odds ao vivo via The Odds API.",
   "leagues": {
     "portugal": {
